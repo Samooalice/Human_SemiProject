@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+<!-- 	<bean id="fileUtil" class="com.human.smei.util.FileUtil" />
+	<bean id="page" class="com.human.semi.util.PageUtil" />
+ -->	
+	<!-- <bean id="mDao" class="com.human.semi.dao.MemberDao" /> -->
+<!-- 	<bean id="gDao" class="com.human.semi.dao.GboardDao" />
+	<bean id="fDao" class="com.human.semi.dao.FileBoardDao" /> -->
+	
+<!-- 	<bean id="fileService" class="com.human.smei.service.FileBoardService" /> -->
+	
+</beans>
