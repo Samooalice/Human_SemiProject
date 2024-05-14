@@ -43,7 +43,7 @@
 		<!-- git 연동 글남김 -->
 		<div class="w3-col mgt10">		
 			<h1 class="w3-yellow w3-padding">전원 확인</h1>
-
+			<h1 class="w3-yellow w3-padding">OK</h1>
 		</div>
 	</div>
 </body>
