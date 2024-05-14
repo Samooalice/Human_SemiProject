@@ -1,7 +1,7 @@
 package com.human.home;
 
-import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class SemiMain {
@@ -9,10 +9,5 @@ public class SemiMain {
 	@RequestMapping("/")
 	public String getMain() {
 		return "main";
-	}
-
-	@RequestMapping("/main_test")
-	public String getMain_test() {
-		return "test_main";
 	}
 }
