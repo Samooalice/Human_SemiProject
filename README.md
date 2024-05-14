@@ -1,2 +1,2 @@
 # Human_SemiProject
-백업용 repo
+진해용 repo
