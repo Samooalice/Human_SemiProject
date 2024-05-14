@@ -45,8 +45,9 @@
 			<h1 class="w3-yellow w3-padding">광혁 왔다 감</h1>
 			<h1 class="w3-yellow w3-padding">지훈 왔다 감!!!!</h1>
 			<h1 class="w3-yellow w3-padding">서현 왔다 감!!!!</h1>
-			<h1 class="w3-yellow w3-padding">명준 왔다 감!!!!</h1>
 			<h1 class="w3-yellow w3-padding">서현씨 확인!</h1>
+			<h1 class="w3-yellow w3-padding">명준 왔다 감!!!!</h1>
+			<h1 class="w3-yellow w3-padding">명준씨 확인!!</h1>
 			<h1 class="w3-yellow w3-padding">Test</h1>
 			<h1 class="w3-yellow w3-padding">Test - working_brunch</h1>
 			<h1 class="w3-yellow w3-padding">Test - working_brunch1</h1>
