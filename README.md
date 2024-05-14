@@ -1,2 +1,2 @@
 # Human_SemiProject
-진행용 repo
+백업용 repo
