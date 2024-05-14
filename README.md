@@ -1,2 +1,2 @@
 # Human_SemiProject
-진해용 repo
+진행용 repo
