@@ -10,4 +10,9 @@ public class SemiMain {
 	public String getMain() {
 		return "main";
 	}
+
+	@RequestMapping("/main_test")
+	public String getMain_test() {
+		return "test_main";
+	}
 }
