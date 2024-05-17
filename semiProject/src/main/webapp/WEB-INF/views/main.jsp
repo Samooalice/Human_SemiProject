@@ -19,8 +19,6 @@
 	img {margin-bottom: -8px;}
 	.mySlides {display: none;}
 </style>
-
-<
 </head>
 <body class="w3-content w3-black" style="max-width:1500px;">
 <!-- Header with Slideshow -->
@@ -44,12 +42,12 @@
 	                    name="pw" id="pw" placeholder="비밀번호를 입력하세요.">
 	            </div>
 	        </div>        
-        <p><button class="w3-button w3-half w3-block w3-green w3-round" onclick="window.open('http://pf.kakao.com/_xbzjxcG')">로그인</button></p> <!-- 채널 연결 임시 테스트 -->
-        <p><button class="w3-button w3-half w3-block w3-green w3-round" onclick="window.open('http://pf.kakao.com/_xbzjxcG/chat')">회원가입</button></p> <!-- 챗봇 직접 연결 임시 테스트 -->
+        <p><button id="login" class="w3-button w3-half w3-block w3-green w3-round" onclick="window.open('http://pf.kakao.com/_xbzjxcG')">로그인</button></p> <!-- 채널 연결 임시 테스트 -->
+        <p><button id="join" class="w3-button w3-half w3-block w3-green w3-round" onclick="window.open('http://pf.kakao.com/_xbzjxcG/chat')">회원가입</button></p> <!-- 챗봇 직접 연결 임시 테스트 -->
       </div>
     </div>
   </div>
-  <div class="mySliㅇes w3-animate-opacity">
+  <div class="mySlides w3-animate-opacity">
     <img class="w3-image" src="https://www.w3schools.com/w3images/app2.jpg" alt="Image 2" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
@@ -115,7 +113,7 @@
 </div>
 
 <!-- Clarity Section -->
-<div class="w3-padding-64 w3-light-grey">
+<div id="Clarity" class="w3-padding-64 w3-light-grey">
   <div class="w3-row-padding">
     <div class="w3-col l4 m6">
       <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="https://www.w3schools.com/w3images/app2.jpg" alt="App" width="335" height="471">
