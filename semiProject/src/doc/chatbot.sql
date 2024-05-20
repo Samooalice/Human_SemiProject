@@ -48,8 +48,6 @@ CREATE TABLE chat_member(
 CREATE TABLE product_info(
     product_no NUMBER(4)
         CONSTRAINT PRODUCT_NO_PK primary key,
-    ages VARCHAR2(10 CHAR)
-        CONSTRAINT PRODUCT_AGES_NN not null,
     product_bank VARCHAR2(10 CHAR)
         CONSTRAINT PRODUCT_BANK_NN not null,
     product_name VARCHAR2(100 CHAR)
