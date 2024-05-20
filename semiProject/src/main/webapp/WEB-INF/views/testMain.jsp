@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Test_main1</title>
+<title>Test_main</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/tm/css/w3.css">
@@ -23,25 +23,14 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#login').click(function(){
-			$(location).attr('href', '/tm/testMain')
-		});
-		
-		$('#link1').click(function(){
-			$(location).attr('href', 'http://pf.kakao.com/_xbzjxcG/chat');
-		});
-		
-		$('#link2').click(function(){
-			$(location).attr('href', 'https://namu.wiki/w/%EB%AA%A8%EB%91%90%EC%9D%98%EB%A7%88%EB%B8%94%20for%20kakao/%EB%B9%84%ED%8C%90?from=%EC%A3%BC%EC%9E%91%EC%9D%98%20%EB%A7%88%EB%B8%94#fn-3');
+			$(location).attr('href', 'https://www.naver.com/')
 		});
 	});
-	
-	
 </script>
 
 
 </head>
-<body>
-	<form method="GET" id="frm"></form>
+<body class="w3-content w3-black" style="max-width:1500px;">
 <!-- Header with Slideshow -->
 <header class="w3-display-container w3-center">
   <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download </button>
@@ -53,27 +42,45 @@
         <hr class="w3-opacity">
 			<div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30">
 	            <div class="w3-col w3-padding">
-	                <label for="id" class="w3-col m4 w3-right-align w3-text-gray lbl">ID : </label>
-	                <input type="text" class="w3-col m8 w3-input w3-border"
+	                <label for="id" class="w3-col m3 w3-right-align w3-text-gray lbl">ID : </label>
+	                <input type="text" class="w3-col m7 w3-input w3-border"
 	                        name="id" id="id" placeholder="아이디를 입력하세요.">
 	            </div>
 	            <div class="w3-col w3-padding">
-	                <label for="pw" class="w3-col m4 w3-right-align w3-text-gray lbl">PW : </label>
-	                <input type="password" class="w3-col m8 w3-input w3-border"
+	                <label for="pw" class="w3-col m3 w3-right-align w3-text-gray lbl">PW : </label>
+	                <input type="password" class="w3-col m7 w3-input w3-border"
 	                    name="pw" id="pw" placeholder="비밀번호를 입력하세요.">
 	            </div>
 	        </div>        
-        <p><button id="login" class="w3-button w3-half w3-block w3-green w3-round">로그인</button></p>
-       
-        <p><a href="#sc">
-        	<button id="join" class="w3-button w3-half w3-block w3-green w3-round">회원가입</button>
-        	</a></p> 
+        <p><button id="login" class="w3-button w3-half w3-block w3-pink w3-round">로그인</button></p> <!-- 채널 연결 임시 테스트 -->
+        <p><button id="join" class="w3-button w3-half w3-block w3-green w3-round">회원가입</button></p> <!-- 챗봇 직접 연결 임시 테스트 -->
       </div>
     </div>
   </div>
-
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="https://www.w3schools.com/w3images/app2.jpg" alt="Image 2" style="min-width:500px" width="1500" height="1000">
+    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge w3-text-red"><b>CLICK!</b> Fast and Easy</h1>
+        <hr class="w3-opacity">
+        <p>Choose from thousands of features</p>
+        <p><button class="w3-button w3-block w3-red w3-round" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p>
+      </div>
+    </div>
+  </div>
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="https://www.w3schools.com/w3images/app3.jpg" alt="Image 3" style="min-width:500px" width="1500" height="1000">
+    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge">Smart Design</h1>
+        <hr class="w3-opacity">
+        <p>Customize photos as you go</p>
+        <p><button class="w3-button w3-block w3-indigo w3-round" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p>
+      </div>
+    </div>
+  </div>
   <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
-
+  <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
 </header>
 
 <!-- The App Section -->
@@ -122,7 +129,7 @@
       <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="https://www.w3schools.com/w3images/app2.jpg" alt="App" width="335" height="471">
     </div>
     <div class="w3-col l8 m6">
-      <span id="sc"><h1 class="w3-jumbo"><b>Clarity</b></h1></span>
+      <h1 class="w3-jumbo"><b>Clarity</b></h1>
       <h1 class="w3-xxxlarge w3-text-red"><b>Pixels, who?</b></h1>
       <p><span class="w3-xlarge">A revolution in resolution.</span> Sharp and clear photos with the world's best photo engine, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
         ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -209,7 +216,7 @@
           <h2 class="w3-opacity">$ 25</h2>
         </li>
         <li class="w3-light-grey w3-padding-24">
-          <button id="link1" class="w3-button w3-black w3-padding-large" ><i class="fa fa-download"></i> Download</button>
+          <button id="link" class="w3-button w3-black w3-padding-large" ><i class="fa fa-download"></i> Download</button>
         </li>
       </ul>
     </div>
@@ -224,7 +231,7 @@
           <h2 class="w3-opacity">$ 99</h2>
         </li>
         <li class="w3-light-grey w3-padding-24">
-          <button id = "link2" class="w3-button w3-black w3-padding-large" > <i class="fa fa-download"></i> Download</button> <!-- 웹사이트 연결 임시 테스트 -->
+          <button id = "link" class="w3-button w3-black w3-padding-large" > <i class="fa fa-download"></i> Download</button> <!-- 웹사이트 연결 임시 테스트 -->
         </li>
       </ul>
     </div>

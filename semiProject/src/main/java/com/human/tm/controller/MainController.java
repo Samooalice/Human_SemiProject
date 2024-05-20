@@ -1,8 +1,7 @@
-package com.human.semi.controller;
+package com.human.tm.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
@@ -11,10 +10,9 @@ public class MainController {
 	public String getMain() {
 		return "main";
 	}
-
-	@RequestMapping("/test_main.semi")
-	public ModelAndView test_Main(ModelAndView mv) {
-		mv.setViewName("test_main");
-		return mv;
+	
+	@RequestMapping("/testMain")
+	public String getTestMain() {
+		return "testMain";
 	}
 }
