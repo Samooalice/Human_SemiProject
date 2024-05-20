@@ -3,7 +3,7 @@
 -- system 계정으로 작업할 내용
 -- chatbot이란 이름의 계정 생성
 create user chatbot IDENTIFIED by 12345 account unlock;
- 
+
 -- chatbot에 테이블 스페이스 관련 권한 부여(계속 생성)
 grant unlimited tablespace to chatbot;
  
