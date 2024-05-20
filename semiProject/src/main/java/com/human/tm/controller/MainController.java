@@ -1,4 +1,4 @@
-package com.human.semi.controller;
+package com.human.tm.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +12,9 @@ public class MainController {
 		return "main";
 	}
 
-	@RequestMapping("/test_main.semi")
+	@RequestMapping("/test_main.tm")
 	public ModelAndView test_Main(ModelAndView mv) {
-		mv.setViewName("test_main");
+		mv.setViewName("main");
 		return mv;
 	}
 }
