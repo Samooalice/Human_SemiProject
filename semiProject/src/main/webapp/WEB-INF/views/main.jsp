@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Test_main1</title>
+<title>Test_main</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/tm/css/w3.css">
@@ -65,14 +65,12 @@
 	        </div>        
         <p><button id="login" class="w3-button w3-half w3-block w3-green w3-round">로그인</button></p>
        
-        <p><a href="#sc">
-        	<button id="join" class="w3-button w3-half w3-block w3-green w3-round">회원가입</button>
-        	</a></p> 
+        <p><button id="join" class="w3-button w3-half w3-block w3-green w3-round">회원가입</button></p> 
       </div>
     </div>
   </div>
 
-  <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+  <a href="#sc" class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey">Take Tour</a>
 
 </header>
 
