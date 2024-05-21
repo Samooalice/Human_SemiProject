@@ -17,9 +17,9 @@ import com.fasterxml.jackson.databind.*;
 public class KKORestAPI {
 	@RequestMapping("/login.tm")
 	public ModelAndView kakaoLogin() {
-		System.out.println("*********************************** in");
+		System.out.println("*********************************** login in");
 		String client_id = "10f828f2b853279cbebdc8641fe75b33";
-		String redirect_url = "http://58.72.151.124:6002/tm/";
+		String redirect_url = "http://58.72.151.124:6002/tm/loginProc.tm";
 		
 		String login_url = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="+client_id+"&redirect_uri="+redirect_url;
 		
@@ -42,7 +42,6 @@ public class KKORestAPI {
         outputs.put("simpleText", simpleText);
 
         simpleText.put("text", "간단한 텍스트 요소입니다.");
-        
         return ResponseEntity.ok(response);
     }
     

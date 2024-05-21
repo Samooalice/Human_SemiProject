@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Test_main1</title>
+<title>Test_main</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/tm/css/w3.css">
@@ -23,7 +23,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#login').click(function(){
-			$(location).attr('href', '/tm/testMain')
+			$(location).attr('href', '/tm/login.tm')
 		});
 		
 		$('#link1').click(function(){
@@ -41,7 +41,6 @@
 
 </head>
 <body>
-	<form method="GET" id="frm"></form>
 <!-- Header with Slideshow -->
 <header class="w3-display-container w3-center">
   <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download </button>
@@ -52,6 +51,7 @@
         <h1 class="w3-xlarge">Login</h1>
         <hr class="w3-opacity">
 			<div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30">
+<c:if test="${not empty ISLOGIN}">
 	            <div class="w3-col w3-padding">
 	                <label for="id" class="w3-col m4 w3-right-align w3-text-gray lbl">ID : </label>
 	                <input type="text" class="w3-col m8 w3-input w3-border"
@@ -62,28 +62,68 @@
 	                <input type="password" class="w3-col m8 w3-input w3-border"
 	                    name="pw" id="pw" placeholder="비밀번호를 입력하세요.">
 	            </div>
+</c:if>
+
+
+<c:if test="${empty ISLOGIN}">
+</c:if>
 	        </div>        
         <p><button id="login" class="w3-button w3-half w3-block w3-green w3-round">로그인</button></p>
        
-        <p><a href="#sc">
-        	<button id="join" class="w3-button w3-half w3-block w3-green w3-round">회원가입</button>
-        	</a></p> 
+        <p><button id="join" class="w3-button w3-half w3-block w3-green w3-round">회원가입</button></p> 
       </div>
     </div>
   </div>
 
-  <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+  <a href="#sc" class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey">Take Tour</a>
 
 </header>
 
-<!-- The App Section -->
+<!-- 대체뭐니 설명 섹션 -->
 <div class="w3-padding-64 w3-white">
   <div class="w3-row-padding">
     <div class="w3-col l8 m6">
-      <h1 class="w3-jumbo"><b>The App</b></h1>
-      <h1 class="w3-xxxlarge w3-text-green"><b>Why buy it?</b></h1>
-      <p><span class="w3-xlarge">Take photos like a pro.</span> You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <h1 class="w3-jumbo"><b>That's Money</b></h1>
+      <h1 class="w3-xxxlarge w3-text-green"><b>대체 뭐니?</b></h1>
+      <span class="w3-xlarge">현대인의 든든한 자산관리 친구! 대체 뭐니?(That's Money!)</span>
+      <p>현대 사회에서 자산 관리는 더 이상 선택이 아닌 필수입니다. 
+		하지만 바쁜 일상 속에서 최신 금융 소식을 따라잡고, 이를 바탕으로 
+		자산 관리를 체계적으로 하는 것은 결코 쉬운 일이 아닙니다. 
+		그래서 대체 뭐니?(That's Money!)는 여러분의 자산 관리를 돕기 위해 
+		키워드 기반 금융상품 소개 서비스를 제공합니다.
+      </p>
+      <span class="w3-xlarge">대체 뭐니?(That's Money!)란?</span>
+      <p>대체 뭐니?(That's Money!)는 최신 금융 상품을 손쉽게 얻고 활용할 수 있도록 설계되었습니다. 
+		 대체 뭐니?(That's Money!)봇과의 키워드 중심 대화를 통해 여러분의 투자성향과 최신 트렌드를 융합하여
+		 바쁜 현대인들도 손쉽게 자산을 관리할 수 있습니다.</p>
+		
+	  <span class="w3-xlarge w3-text-green">[주요기능]</span>
+		<p>* 맞춤형 금융상품 제공</p>
+		<p>- 사용자가 설정한 키워드를 기반으로 최신 예/적금 상품을 큐레이션하여 제공</p>
+		<p>- 관심분야에 따른 투자 Tip등을 간단하게 확인</p>
+		
+		<p>* 실시간 업데이트</p>
+		<p>- 실시간으로 업데이트 되는 금융 소식을 통해 빠른 시장변동에 대응</p>
+		<p>- 중요 소식은 알림으로 즉시 전달받고, 중요정보를 놓치지 않도록 지원</p>
+		
+		<p>* 사용 친화적 인터페이스</p>
+		<p>- 직관적이고 사용하기 쉬운 인터페이스로 누구나 쉽게 접근 가능</p>
+		
+		<span class="w3-xlarge w3-text-green">[이용방법]</span>
+		<p>Step 1. 가입키워드 설정</p>
+		<p>- 연령층, 관심상품, 주거래은행 등 사용자 직접 선택</p>
+		
+		<p>Step 2. 예/적금 상품 수신</p>
+		<p>- 전체 금융권 출시 예/적금 상품 검색 및 분석</p>
+		
+		<p>Step 3. 사용자 맞춤 예/적금 상품 추천</p>
+		<p>- 시중에 접수중인 예/적금 상품 제공</p>
+		
+		<span class="w3-xlarge w3-text-green">[대체뭐니?(That's Money!)의 이점]</span>
+		<p>시간 절약: 바쁜 일상 속에서 최신 금융 정보를 쉽게 얻어 시간과 노력을 절약</p>
+		<p>지식 확장: 다양한 전문가의 분석과 조언을 통해 금융지식 확장</p>
+		<p>투자 효율성: 맞춤형 정보를 바탕으로, 보다 효율적인 자산관리와 투자 가능</p>
+		
       <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small" onclick="document.getElementById('download').style.display='block'">
         <i class="fa fa-download"></i> Download Application
       </button>
@@ -122,10 +162,10 @@
       <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="https://www.w3schools.com/w3images/app2.jpg" alt="App" width="335" height="471">
     </div>
     <div class="w3-col l8 m6">
-      <span id="sc"><h1 class="w3-jumbo"><b>Clarity</b></h1></span>
-      <h1 class="w3-xxxlarge w3-text-red"><b>Pixels, who?</b></h1>
-      <p><span class="w3-xlarge">A revolution in resolution.</span> Sharp and clear photos with the world's best photo engine, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <span id="sc"><h1 class="w3-xxlarge"><b>고객님들에게 전하는 말</b></h1></span>
+      <p>자산 관리는 이제 더이상 어려운 일이 아닙니다. eocpa 키워드 기반 금융소식
+      	 제공 서비스를 통해 최신 금융정보를 손쉽게 얻고, 현명한 자산관리를 실현하세요!
+      	 지금 바로 가입하고, 당신의 자산 관리를 한단계 업그레이드 하세요!</p>
     </div>
   </div>
 </div>
@@ -251,7 +291,7 @@ var slideIndex = 1;
 showDivs(slideIndex);
 
 function plusDivs(n) {
-  showDivs(slideIndex += n);
+  showDivs(slideIndex += n;
 }
 
 function showDivs(n) {
