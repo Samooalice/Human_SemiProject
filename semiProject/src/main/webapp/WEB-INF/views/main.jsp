@@ -66,6 +66,7 @@
 
 
 <c:if test="${not empty ISLOGIN}">
+		
 </c:if>
 	        </div>        
         <p><button id="login" class="w3-button w3-half w3-block w3-green w3-round">로그인</button></p>
