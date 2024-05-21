@@ -51,7 +51,7 @@
         <h1 class="w3-xlarge">Login</h1>
         <hr class="w3-opacity">
 			<div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30">
-<c:if test="${not empty ISLOGIN}">
+<c:if test="${empty ISLOGIN}">
 	            <div class="w3-col w3-padding">
 	                <label for="id" class="w3-col m4 w3-right-align w3-text-gray lbl">ID : </label>
 	                <input type="text" class="w3-col m8 w3-input w3-border"
@@ -65,7 +65,7 @@
 </c:if>
 
 
-<c:if test="${empty ISLOGIN}">
+<c:if test="${not empty ISLOGIN}">
 </c:if>
 	        </div>        
         <p><button id="login" class="w3-button w3-half w3-block w3-green w3-round">로그인</button></p>
