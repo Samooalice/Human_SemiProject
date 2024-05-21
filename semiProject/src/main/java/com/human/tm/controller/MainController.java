@@ -20,6 +20,10 @@ public class MainController {
 	@RequestMapping("/loginProc.tm")
 	public ModelAndView loginProc(ModelAndView mv) {
 		System.out.println("************************************** loginProc in");
+		
+		boolean islogin = true;
+
+		mv.addObject("ISLOGIN", islogin);		
 		mv.setViewName("main");
 		
 		return mv;
