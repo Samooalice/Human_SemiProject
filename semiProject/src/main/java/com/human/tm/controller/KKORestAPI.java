@@ -459,9 +459,9 @@ public class KKORestAPI {
         Map<String, Object> webViewButton = new HashMap<>();
         buttons[1] = webViewButton;
 
-        webViewButton.put("action", "block");
+        webViewButton.put("action", "webLink");
         webViewButton.put("label", "처음으로");
-        webViewButton.put("blockId", "6648b75ef2800447c628bf96");
+        webViewButton.put("webLinkUrl", "http://58.72.151.124:6002/tm/result.tm");
 
         return ResponseEntity.ok(response);
     }
