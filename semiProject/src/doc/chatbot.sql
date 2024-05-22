@@ -1,9 +1,24 @@
 -- 대체뭐니(That's money) 데이터베이스 작업(jennie는 테이블이 너무 많은 관계로 프로젝트 동안은 이 chatbot계정으로 할 것)
 
+--ALTER Table product_info drop column product_file;
+--alter table product_info add product_file varchar2(4000 char);
+--ALTER TABLE PRODUCT_INFO
+--ADD CONSTRAINT PRODUCT_FILE_NN CHECK (PRODUCT_file IS NOT NULL);
+--
+--ALTER Table product_info drop column Product_type;
+--alter table product_info add product_type varchar2(50 char);
+--ALTER TABLE PRODUCT_INFO
+--ADD CONSTRAINT PRODUCT_TYPE_NN CHECK (PRODUCT_type IS NOT NULL);
+--
+--ALTER Table product_info drop column JOIN_TARGET;
+--alter table product_info add join_target varchar2(50 char);
+--ALTER TABLE PRODUCT_INFO
+--ADD CONSTRAINT PRODUCT_TARGET_NN CHECK (join_target IS NOT NULL);
+
 -- system 계정으로 작업할 내용
 -- chatbot이란 이름의 계정 생성
 create user chatbot IDENTIFIED by 12345 account unlock;
-
+ 
 -- chatbot에 테이블 스페이스 관련 권한 부여(계속 생성)
 grant unlimited tablespace to chatbot;
  
@@ -25,6 +40,7 @@ grant create table to chatbot;
 -- 다른 사람들은 system계정의 이 명령어를 실행하면 됨(system 계정으로)
 conn chatbot/12345;
 
+
 -- chat_member(회원) 테이블 생성
 CREATE TABLE chat_member(
     mno NUMBER(4)
@@ -44,7 +60,7 @@ CREATE TABLE chat_member(
         CONSTRAINT BOT_TYPE_NN not null
 );
 
--- Product_info(상품안내) 테이블 생성
+-- Product_info(상품안내) 테이블 생성(상품 내용을 크롤링할 때 VARCHAR2는 무리라고 판단하고 product_file은 CLOB으로 변경)
 CREATE TABLE product_info(
     product_no NUMBER(4)
         CONSTRAINT PRODUCT_NO_PK primary key,
@@ -53,7 +69,7 @@ CREATE TABLE product_info(
     product_name VARCHAR2(100 CHAR)
         CONSTRAINT PRODUCT_NAME_UK unique
         CONSTRAINT PRODUCT_NAME_NN not null,
-    product_file VARCHAR2(4000 CHAR)
+    product_file CLOB
         CONSTRAINT PRODUCT_FILE_NN not null,
     product_type VARCHAR2(50 CHAR)
         CONSTRAINT PRODUCT_TYPE_NN not null,
@@ -78,3 +94,4 @@ CREATE TABLE now_product(
         CONSTRAINT NOW_ISSHOW_CK CHECK(isshow IN('Y','N'))
         CONSTRAINT NOW_ISSHOW_NN not null
 );
+commit;

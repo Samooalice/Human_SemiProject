@@ -47,32 +47,41 @@
   <div class="mySlides w3-animate-opacity">
     <img class="w3-image" src="https://www.w3schools.com/w3images/app.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+    
+<c:if test="${empty ISLOGIN}">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
         <h1 class="w3-xlarge">Login</h1>
         <hr class="w3-opacity">
 			<div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30">
-<c:if test="${empty ISLOGIN}">
 	            <div class="w3-col w3-padding">
-	                <label for="id" class="w3-col m4 w3-right-align w3-text-gray lbl">ID : </label>
+	                <label for="id" class="w3-col m4 w3-left-align w3-text-gray lbl">ID : </label>
 	                <input type="text" class="w3-col m8 w3-input w3-border"
 	                        name="id" id="id" placeholder="아이디를 입력하세요.">
 	            </div>
 	            <div class="w3-col w3-padding">
-	                <label for="pw" class="w3-col m4 w3-right-align w3-text-gray lbl">PW : </label>
+	                <label for="pw" class="w3-col m4 w3-left-align w3-text-gray lbl">PW : </label>
 	                <input type="password" class="w3-col m8 w3-input w3-border"
 	                    name="pw" id="pw" placeholder="비밀번호를 입력하세요.">
 	            </div>
-</c:if>
 
-
-<c:if test="${not empty ISLOGIN}">
-		
-</c:if>
 	        </div>        
         <p><button id="login" class="w3-button w3-half w3-block w3-green w3-round">로그인</button></p>
        
         <p><button id="join" class="w3-button w3-half w3-block w3-green w3-round">회원가입</button></p> 
       </div>
+</c:if>
+    
+<c:if test="${not empty ISLOGIN}">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge">현대인의 금융친구 That's money?!</h1>
+        <hr class="w3-opacity">
+			<div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30"></div>        
+        <p><button id="login" class="w3-button w3-half w3-block w3-green w3-round">로그아웃</button></p>
+       
+        <p><button id="join" class="w3-button w3-half w3-block w3-green w3-round">채팅시작</button></p> 
+      </div>
+</c:if>
+
     </div>
   </div>
 
