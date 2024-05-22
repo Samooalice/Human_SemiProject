@@ -17,6 +17,11 @@ public class MainController {
 		return "redirect";
 	}
 	
+	@RequestMapping("/result.tm")
+	public String getResult() {
+		return "result";
+	}
+	
 	@RequestMapping("/loginProc.tm")
 	public ModelAndView loginProc(ModelAndView mv) {
 		System.out.println("************************************** loginProc in");
