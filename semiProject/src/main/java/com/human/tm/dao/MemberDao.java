@@ -11,7 +11,7 @@ public class MemberDao {
 	@Autowired
 	SqlSessionTemplate session;
 	
-	public List<MemberVO> Types(String interest_type) {
+	public List<MemberVO> TypeList(String interest_type) {
 		return session.selectList("mSQL.typeList",interest_type);
 	}
 }
