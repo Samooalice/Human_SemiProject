@@ -60,7 +60,7 @@ CREATE TABLE chat_member(
         CONSTRAINT BOT_TYPE_NN not null
 );
 
--- Product_info(상품안내) 테이블 생성(상품 내용을 크롤링할 때 VARCHAR2는 무리라고 판단하고 product_file은 CLOB으로 변경)
+-- Product_info(상품안내) 테이블 생성
 CREATE TABLE product_info(
     product_no NUMBER(4)
         CONSTRAINT PRODUCT_NO_PK primary key,
@@ -90,7 +90,7 @@ CREATE TABLE now_product(
     product_no NUMBER(4)
         CONSTRAINT NOW_PNO_FK REFERENCES product_info(product_no)
         CONSTRAINT NOW_PNO_NN not null,
-    isshow CHAR(1)
+    isshow CHAR(1) default 'Y'
         CONSTRAINT NOW_ISSHOW_CK CHECK(isshow IN('Y','N'))
         CONSTRAINT NOW_ISSHOW_NN not null
 );
