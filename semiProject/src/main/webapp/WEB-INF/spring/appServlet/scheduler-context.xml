@@ -12,8 +12,8 @@
 						http://www.springframework.org/schema/context
 						https://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean id="salEditTask" class="com.human.tm.scheduler.Crawling" />
-	<bean id="salEditJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean" 
+	<bean id="Crawling" class="com.human.tm.scheduler.Crawling" />
+	<bean id="CrawlingJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean" 
 			p:jobClass="com.human.tm.scheduler.CrawlingJob"
 			p:durability="true">
 		<property name="jobDataAsMap">
@@ -26,7 +26,7 @@
 	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean"
 		p:jobDetail-ref="CrawlingJob"
 		p:startDelay="1000"
-		p:cronExpression="0 50/1 ? ? ? ?">
+		p:cronExpression="0 53/1 * * * ?">
 	</bean>
 	
 	<bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
