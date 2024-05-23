@@ -431,9 +431,9 @@ public class KKORestAPI {
         
         basicCard.put("description", 
         		"고객님께서 선택하신 내용은"
-        		+ "\n- 나이 : " + mVO.getBirth() 
-        		+ "\n- 성향 : " + mVO.getInterest_type()
+        		+ "\n- 나이대 : " + mVO.getBirth() 
         		+ "\n- 은행 : " + mVO.getMain_bank()
+        		+ "\n- 성향 : " + mVO.getInterest_type()
         		+ "\n입니다."
         		);
 
@@ -452,16 +452,16 @@ public class KKORestAPI {
         buttons[0] = openButton;
 
         openButton.put("action", "webLink");
-        openButton.put("label", "결과보기");
-        openButton.put("webLinkUrl", "http://58.72.151.124:6002/tm");
+        openButton.put("label", "처음으로");
+        openButton.put("webLinkUrl", "http://58.72.151.124:6002/tm/result.tm");
 
         // 두 번째 버튼
         Map<String, Object> webViewButton = new HashMap<>();
         buttons[1] = webViewButton;
-
+        
         webViewButton.put("action", "webLink");
-        webViewButton.put("label", "처음으로");
-        webViewButton.put("webLinkUrl", "http://58.72.151.124:6002/tm/result.tm");
+        webViewButton.put("label", "결과보기");
+        webViewButton.put("webLinkUrl", "http://58.72.151.124:6002/tm/");
 
         return ResponseEntity.ok(response);
     }
