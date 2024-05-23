@@ -5,7 +5,7 @@
 <mapper namespace="mSQL">
 
 	<!-- 사용자가 관심있는 분야에 해당하는 상품 가져오는 질의명령 -->
-	<select id="typeList" parameterType="mVO" resultType="mVO">
+	<select id="typeList" parameterType="string" resultType="mVO">
 		SELECT
 			product_type
 		FROM
