@@ -9,21 +9,12 @@
 	<!-- 사용자가 관심있는 분야에 해당하는 상품 가져오는 질의명령 -->
 	<select id="typeList" parameterType="string" resultType="mVO">
 		SELECT
-			product_type
+			product_no, product_name, product_bank, product_type
 		FROM
-			chat_member, product_info
+			product_info
 		WHERE
 			product_type=#{interest_type}
 			and product_bank = #{main_bank}
 	</select>
-	
-	<!-- 회원 정보 입력 전담 질의명령-->
-	<insert id="addMember" parameterType="mVO">
-		INSERT INTO
-			chat_member(mno, nickname, birthdate, gen, main_bank, interest_type)
-		VALUES(
-			DECODE(), #{nickname}, #{birthdate}, #{gen}, #{main_bank}, #{interest_type}
-		)
-	</insert>
 	
 </mapper>
