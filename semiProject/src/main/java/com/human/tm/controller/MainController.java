@@ -33,4 +33,7 @@ public class MainController {
 		
 		return mv;
 	}
+	
+	//@RequestMapping("/logoutProc.tm")
+	//public ModelAndView logoutProc
 }
