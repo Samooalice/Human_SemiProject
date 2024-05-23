@@ -26,6 +26,10 @@
 			$(location).attr('href', '/tm/login.tm')
 		});
 		
+		$('#logout').click(function(){
+			$(location).attr('href', '/tm/logoutProc.tm')
+		});
+		
 		$('#link1').click(function(){
 			$(location).attr('href', 'http://pf.kakao.com/_xbzjxcG/chat');
 		});
@@ -48,7 +52,7 @@
     <img class="w3-image" src="https://www.w3schools.com/w3images/app.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
     
-<c:if test="${empty ISLOGIN}">
+<c:if test="${ISLOGIN ne true}">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
         <h1 class="w3-xlarge">Login</h1>
         <hr class="w3-opacity">
@@ -71,14 +75,14 @@
       </div>
 </c:if>
     
-<c:if test="${not empty ISLOGIN}">
+<c:if test="${ISLOGIN eq true}">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
         <h1 class="w3-xlarge">현대인의 금융친구 That's money?!</h1>
         <hr class="w3-opacity">
 			<div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30"></div>        
-        <p><button id="login" class="w3-button w3-half w3-block w3-green w3-round">로그아웃</button></p>
+        <p><button id="logout" class="w3-button w3-half w3-block w3-green w3-round">로그아웃</button></p>
        
-        <p><button id="join" class="w3-button w3-half w3-block w3-green w3-round">채팅시작</button></p> 
+        <p><button id="chat" class="w3-button w3-half w3-block w3-green w3-round">채팅시작</button></p> 
       </div>
 </c:if>
 

@@ -34,6 +34,17 @@ public class MainController {
 		return mv;
 	}
 	
-	//@RequestMapping("/logoutProc.tm")
-	//public ModelAndView logoutProc
+	@RequestMapping("/logoutProc.tm")
+	public ModelAndView logoutProc(ModelAndView mv) {
+		System.out.println("************************************** logout");
+		
+		boolean islogin = false;
+		
+		mv.addObject("ISLOGIN", islogin);		
+		mv.setViewName("main");
+		
+		return mv;
+	}
+	
+	
 }
