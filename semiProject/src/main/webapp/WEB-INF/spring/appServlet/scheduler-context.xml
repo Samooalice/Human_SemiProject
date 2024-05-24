@@ -29,7 +29,7 @@
 	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean"
 		p:jobDetail-ref="CrawlingJob"
 		p:startDelay="1000"
-		p:cronExpression="0 0 1 * * *">
+		p:cronExpression="0 0 1 * * ?">
 	</bean>
 	
 	<bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
