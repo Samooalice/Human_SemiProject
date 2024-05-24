@@ -1,8 +1,33 @@
 package com.human.tm.vo;
 
 public class MemberVO {
-	String birth, main_bank, interest_type;
+	private int product_no;
+	private String birth, main_bank, interest_type, product_type, product_bank, product_name;
 	
+	public int getProduct_no() {
+		return product_no;
+	}
+	public void setProduct_no(int product_no) {
+		this.product_no = product_no;
+	}
+	public String getProduct_type() {
+		return product_type;
+	}
+	public void setProduct_type(String product_type) {
+		this.product_type = product_type;
+	}
+	public String getProduct_bank() {
+		return product_bank;
+	}
+	public void setProduct_bank(String product_bank) {
+		this.product_bank = product_bank;
+	}
+	public String getProduct_name() {
+		return product_name;
+	}
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
+	}
 	public String getBirth() {
 		return birth;
 	}
