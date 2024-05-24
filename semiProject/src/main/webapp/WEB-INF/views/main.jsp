@@ -29,6 +29,10 @@
 		$('#logout').click(function(){
 			$(location).attr('href', '/tm/logoutProc.tm')
 		});
+
+		$('#chat').click(function(){
+			$(location).attr('href', 'http://pf.kakao.com/_xbwxixcG/chat')
+		});
 		
 		$('#link1').click(function(){
 			$(location).attr('href', 'http://pf.kakao.com/_xbzjxcG/chat');
@@ -52,7 +56,7 @@
     <img class="w3-image" src="https://www.w3schools.com/w3images/app.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
     
-<c:if test="${ISLOGIN ne true}">
+<c:if test="${empty SID}">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
         <h1 class="w3-xlarge">Login</h1>
         <hr class="w3-opacity">
@@ -62,27 +66,27 @@
 	                <input type="text" class="w3-col m8 w3-input w3-border"
 	                        name="id" id="id" placeholder="아이디를 입력하세요.">
 	            </div>
-	            <div class="w3-col w3-padding">
+
+	            <div class="w3-col w3-padding w3-margin-bottom">
 	                <label for="pw" class="w3-col m4 w3-left-align w3-text-gray lbl">PW : </label>
 	                <input type="password" class="w3-col m8 w3-input w3-border"
 	                    name="pw" id="pw" placeholder="비밀번호를 입력하세요.">
 	            </div>
-
-	        </div>        
-        <p><button id="login" class="w3-button w3-half w3-block w3-green w3-round">로그인</button></p>
-       
-        <p><button id="join" class="w3-button w3-half w3-block w3-green w3-round">회원가입</button></p> 
+        
+					<p><button id="login" class="w3-button w3-block w3-green w3-round w3-margin-right">로그인</button></p>
+	        		<p><button id="join" class="w3-button w3-left w3-block w3-green w3-round">회원가입</button></p> 
+	        </div>     
       </div>
 </c:if>
     
-<c:if test="${ISLOGIN eq true}">
+<c:if test="${not empty SID}">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-        <h1 class="w3-xlarge">현대인의 금융친구 That's money?!</h1>
-        <hr class="w3-opacity">
-			<div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30"></div>        
-        <p><button id="logout" class="w3-button w3-half w3-block w3-green w3-round">로그아웃</button></p>
-       
-        <p><button id="chat" class="w3-button w3-half w3-block w3-green w3-round">채팅시작</button></p> 
+	      <h1 class="w3-xlarge">[ ${SID} ]님 환영합니다!</h1>
+	      <hr class="w3-opacity">
+	      <div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30">
+	      	<div><button id="chat" class="w3-button w3-block w3-green w3-round w3-margin-bottom">채팅시작</button></div>
+	      	<div><button id="logout" class="w3-button w3-block w3-green w3-round">로그아웃</button></div> 
+	      </div>      
       </div>
 </c:if>
 
