@@ -52,7 +52,7 @@ public class MainController {
 	
 	@RequestMapping("/edit.tm")
 	public String getEdit() {
-		return "join";
+		return "edit";
 	}
 
 	@RequestMapping("/loginProc.tm")

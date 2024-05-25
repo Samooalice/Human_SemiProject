@@ -22,6 +22,11 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		
+		$('#main').click(function(){
+			$(location).attr('href','/tm/');
+		});
+		
 		$('#join').click(function(){
 	        $('#frm').submit();
 		});
@@ -91,7 +96,7 @@
 		    </form>
 		    
 		        <div class="w3-col w3-padding w3-center">
-			        <div class="w3-btn w3-center w3-brown w3-margin-top w3-margin-bottom" id="edit">정보수정하기</div>
+			        <div class="w3-btn w3-center w3-brown w3-margin-top w3-margin-bottom" id="main">메인으로</div>
 			        <div class="w3-btn w3-center w3-brown w3-margin-top w3-margin-bottom" id="edit">정보수정하기</div>
 		        </div>
 	</div>
