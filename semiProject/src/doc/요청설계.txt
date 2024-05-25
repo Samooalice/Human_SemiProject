@@ -1,11 +1,19 @@
+요청내용	:	/tm/join.tm
+파라미터	:	없음
+컨트롤러	:	com.human.tm.controller.MainController
+처리함수	:	getJoin()
+응답문서	:	forward - /webapp/WEB-INF/views/join.jsp
+
+요청내용	:	/tm/joinProc.tm
+파라미터	:	nickname, period_day, birth, gen, main_bank, interest_type
+컨트롤러	:	com.human.tm.controller.MainController
+처리함수	:	joinProc()
+응답문서	:	redirect ]
+					성공 : /tm/
+					실패 : /tm/join.tm
+
 요청내용	: 
 파라미터	:
 컨트롤러	:
 처리함수	:
 응답문서	:
-
-요청내용	:	
-파라미터	:	
-컨트롤러	:	com.human.tm.controller.MainController
-처리함수	:	
-응답문서	:	

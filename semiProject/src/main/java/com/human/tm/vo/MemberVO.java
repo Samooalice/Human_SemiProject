@@ -4,7 +4,7 @@ import java.sql.Clob;
 
 public class MemberVO {
 	private int product_no, mno;
-	private String birth, main_bank, interest_type, product_type, product_bank, product_name, nickname, period_day, isshow, join_target;
+	private String nickname, period_day, birth, gen, main_bank, interest_type, product_type, product_bank, product_name, isshow, join_target;
 	private Clob product_file;
 	
 	
@@ -19,6 +19,13 @@ public class MemberVO {
 	}
 	public void setMno(int mno) {
 		this.mno = mno;
+	}
+	
+	public String getGen() {
+		return gen;
+	}
+	public void setGen(String gen) {
+		this.gen = gen;
 	}
 	public String getBirth() {
 		return birth;

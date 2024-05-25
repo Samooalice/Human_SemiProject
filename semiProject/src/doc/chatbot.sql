@@ -53,7 +53,8 @@ CREATE TABLE chat_member(
     birth VARCHAR2(50 CHAR)
         CONSTRAINT BOT_BIRTH_NN not null,
     gen CHAR(1)
-        CONSTRAINT BOT_GEN_NN not null,
+        CONSTRAINT BOT_GEN_NN not null
+        CONSTRAINT BOT_GEN_CK CHECK(gen IN('M','F')),
     main_bank VARCHAR2(100 CHAR)
         CONSTRAINT BOT_MAINBANK_NN not null,
     interest_type VARCHAR2(100 CHAR)

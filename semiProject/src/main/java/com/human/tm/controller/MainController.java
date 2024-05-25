@@ -4,8 +4,10 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -47,46 +49,91 @@ public class MainController {
 	public String getJoin() {
 		return "join";
 	}
-	
+
 	@RequestMapping("/loginProc.tm")
 	public ModelAndView loginProc(@RequestParam String code, ModelAndView mv, HttpSession session, MemberVO mVO, RedirectView rv) {
-		System.out.println("************************************** loginProc in");
-		String accessToken = getAccessToken(code);
-		
-		HashMap<String, Object> userInfo = getUserInfo(accessToken);
-        String nickname = (String)userInfo.get("nickname");
-		
-        session.setAttribute("SID", nickname);
-        String sid = (String) session.getAttribute("SID");
-        
-        if(nickname == null) {
-        	rv.setUrl("/tm/main.tm");
-        	mv.setView(rv);
-        } else {
-        	System.out.println(nickname);
-        	int cnt = mDao.nickCount(nickname);
-        	// cnt == 0
-        	if(cnt == 0) {
-        		// 회원가입 안됨
-        		// 부가정보 입력창으로 보냄(리다이렉트)
-        		// nickname을 파라미터로 회원부가입력 페이지로 보냄
-        		rv.setUrl("/tm/join.tm?nickname="+nickname);
-        		mv.setView(rv);
-        	} else {
-        		// cnt == 1
-        		// 회원가입이 됨
-        		// 메인
-        		session.setAttribute("SID", nickname);
-        		rv.setUrl("/tm/main.tm?nickname="+nickname);
-        		mv.setView(rv);
-        	}
-        }
-        
-        return mv;
+	    System.out.println("************************************** loginProc in");
+
+	    String accessToken = null;
+	    try {
+	        accessToken = getAccessToken(code);
+	    } catch (Exception e) {
+	        System.out.println("Error getting access token: " + e.getMessage());
+	        e.printStackTrace();
+	        rv.setUrl("/tm/error.tm"); // 에러 페이지로 리다이렉트
+	        mv.setView(rv);
+	        return mv;
+	    }
+
+	    HashMap<String, Object> userInfo = null;
+	    try {
+	        userInfo = getUserInfo(accessToken);
+	    } catch (Exception e) {
+	        System.out.println("Error getting user info: " + e.getMessage());
+	        e.printStackTrace();
+	        rv.setUrl("/tm/error.tm"); // 에러 페이지로 리다이렉트
+	        mv.setView(rv);
+	        return mv;
+	    }
+
+	    String nickname = (String) userInfo.get("nickname");
+
+	    if (nickname == null) {
+	        System.out.println("Nickname is null");
+	        rv.setUrl("/tm/main.tm");
+	    } else {
+	        System.out.println("Nickname: " + nickname);
+
+	        int cnt = 0;
+	        
+	        try {
+	            cnt = mDao.nickCount(nickname);
+	        } catch (Exception e) {
+	            System.out.println("Error checking nickname count: " + e.getMessage());
+	            e.printStackTrace();
+	            rv.setUrl("/tm/error.tm"); // 에러 페이지로 리다이렉트
+	            mv.setView(rv);
+	            return mv;
+	        }
+
+	        session.setAttribute("SID", nickname);
+
+	        try {
+	            String encodedNickname = URLEncoder.encode(nickname, "UTF-8");
+	            if (cnt == 0) {
+	                // 회원가입이 안된 경우
+	                rv.setUrl("/tm/join.tm?nickname=" + encodedNickname);
+	            } else {
+	                // 회원가입이 된 경우
+	                rv.setUrl("/tm/main.tm?nickname=" + encodedNickname);
+	            }
+	        } catch (UnsupportedEncodingException e) {
+	            System.out.println("Error encoding nickname: " + e.getMessage());
+	            e.printStackTrace();
+	            rv.setUrl("/tm/error.tm"); // 에러 페이지로 리다이렉트
+	        }
+	    }
+
+	    mv.setView(rv);
+	    return mv;
 	}
 	
-	
-	
+	@RequestMapping("/joinProc.tm")
+	public ModelAndView joinProc(ModelAndView mv, RedirectView rv, MemberVO mVO) {
+		
+		System.out.println("************************************** joinProc in");
+		int cnt = mDao.addMemb(mVO);
+		
+		if(cnt == 1) {
+			rv.setUrl("/tm/main.tm");
+		}else {
+			rv.setUrl("/tm/join.tm");
+		}
+		
+		mv.setView(rv);
+		return mv;
+	}
+
 	private String getAccessToken(String code) {
         String accessToken = "";
         String reqUrl = "https://kauth.kakao.com/oauth/token";
