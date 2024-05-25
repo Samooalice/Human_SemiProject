@@ -19,7 +19,7 @@
 응답문서	:	forward - /webapp/WEB-INF/views/edit.jsp
 
 요청내용	: 	/tm/editProc.tm
-파라미터	:	
+파라미터	:	birth, period_day, interest_type, main_bank, gen
 컨트롤러	:	com.human.tm.controller.MainController
 처리함수	:	editProc()
 응답문서	:	redirect ] 

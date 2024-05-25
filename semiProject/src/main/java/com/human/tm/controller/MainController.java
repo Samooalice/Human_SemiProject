@@ -125,7 +125,6 @@ public class MainController {
 	
 	@RequestMapping("/joinProc.tm")
 	public ModelAndView joinProc(ModelAndView mv, RedirectView rv, MemberVO mVO) {
-		
 		System.out.println("************************************** joinProc in");
 		int cnt = mDao.addMemb(mVO);
 		
@@ -133,6 +132,21 @@ public class MainController {
 			rv.setUrl("/tm/main.tm");
 		}else {
 			rv.setUrl("/tm/join.tm");
+		}
+		
+		mv.setView(rv);
+		return mv;
+	}
+	
+	@RequestMapping("/editProc.tm")
+	public ModelAndView editProc(MemberVO mVO, RedirectView rv, ModelAndView mv) {
+		System.out.println("************************************** editProc in");
+		int cnt = mDao.editMembInfo(mVO);
+		
+		if(cnt == 1) {
+			rv.setUrl("/tm/main.tm");
+		}else {
+			rv.setUrl("/tm/edit.tm");
 		}
 		
 		mv.setView(rv);

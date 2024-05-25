@@ -24,16 +24,6 @@
 			nickname=#{nickname}
 	</select>
 	
-	<!-- 닉네임에 해당하는 회원정보 가져오기 -->
-	<select id="" resultType="int">
-		SELECT
-			Count(*) cnt
-		FROM
-			chat_member
-		WHERE	
-			nickname=#{nickname}
-	</select>
-	
 	<insert id="addMemb" parameterType="mVO">
 		INSERT INTO 
 			chat_member(mno, nickname, period_day, birth, gen, main_bank, interest_type)
@@ -42,4 +32,29 @@
 		)
 	</insert>
 	
+	<update id="editMembInfo" parameterType="mVO">
+		UPDATE
+			chat_member
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="period_day != null">
+				period_day = #{period_day},
+			</if>
+			
+			<if test="birth != null">
+				birth = #{birth},
+			</if>
+			
+			<if test="gen != null">
+				gen = #{gen},
+			</if>
+			<if test="main_bank != null">
+				main_bank = #{main_bank},
+			</if>
+			<if test="interest_type != null">
+				interest_type = #{interest_type}
+			</if>
+		</trim>
+		WHERE
+			nickname = #{nickname}
+	</update>
 </mapper>

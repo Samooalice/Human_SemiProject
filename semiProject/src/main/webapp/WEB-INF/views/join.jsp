@@ -37,11 +37,11 @@
 <body>
 	<div class="w3-content mxw650">
 	 	<h1 class="w3-center w3-amber w3-padding">Join Page</h1>
-		    <form action="/tm/joinProc.tm" method="POST" id="frm"
-		    class="w3-green w3-center w3-margin-top w3-card-4">
+		    <form action="/tm/joinProc.tm" method="POST" id="frm" class="w3-green w3-center w3-margin-top w3-card-4">
 		        
 		        <div class="w3-col w3-padding w3-margin-top">
-			        <input type="hidden" name="nickname" value="${param.nickname}" id="nickname" readonly/>
+		        	<label for="nickname">당신의 닉네임은 무엇입니까? : </label>
+			        <input type="hidden" name="nickname" value="${param.nickname}" id="nickname" class="w3-border" readonly/>
 		        </div>
 		        
 		        <div class="w3-col w3-padding w3-margin-top">

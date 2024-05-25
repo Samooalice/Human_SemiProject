@@ -26,4 +26,9 @@ public class MemberDao {
 	public int addMemb(MemberVO mVO) {
 		return session.insert("mSQL.addMemb", mVO);
 	}
+	
+	// 회원정보수정 함수
+	public int editMembInfo(MemberVO mVO) {
+		return session.update("mSQL.editMembInfo", mVO);
+	}
 }

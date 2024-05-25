@@ -95,4 +95,12 @@ CREATE TABLE now_product(
         CONSTRAINT NOW_ISSHOW_CK CHECK(isshow IN('Y','N'))
         CONSTRAINT NOW_ISSHOW_NN not null
 );
+
+-- 시퀀스 생성
+CREATE Sequence membSeq
+start with 1001
+increment by 1
+nocache
+nocycle;
+
 commit;

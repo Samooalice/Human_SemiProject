@@ -27,7 +27,7 @@
 			$(location).attr('href','/tm/');
 		});
 		
-		$('#join').click(function(){
+		$('#edit').click(function(){
 	        $('#frm').submit();
 		});
 	});
@@ -38,12 +38,11 @@
 <body>
 	<div class="w3-content mxw650">
 	 	<h1 class="w3-center w3-amber w3-padding">Edit Page</h1>
-		    <form action="/tm/editProc.tm" method="POST" id="frm"
-		    class="w3-green w3-center w3-margin-top w3-card-4">
+		    <form action="/tm/editProc.tm" method="POST" id="frm" class="w3-green w3-center w3-margin-top w3-card-4">
 		        
 		        <div class="w3-col w3-padding w3-margin-top">
 			        <label for="nickname">당신의 닉네임은 무엇입니까? : </label>
-			        <input type="hidden" name="nickname" value="${param.nickname}" id="nickname" readonly/>
+			        <input type="hidden" name="nickname" value="${param.nickname}" id="nickname" class="w3-border" readonly/>
 		        </div>
 		        
 		        <div class="w3-col w3-padding w3-margin-top">
