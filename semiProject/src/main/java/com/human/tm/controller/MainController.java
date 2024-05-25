@@ -51,13 +51,13 @@ public class MainController {
 	@RequestMapping("/loginProc.tm")
 	public ModelAndView loginProc(@RequestParam String code, ModelAndView mv, HttpSession session, MemberVO mVO, RedirectView rv) {
 		System.out.println("************************************** loginProc in");
-		System.out.println("##################### 인가 코드 : " + code);	
-		
 		String accessToken = getAccessToken(code);
-		System.out.println("##################### 허가 코드 : " + accessToken);
 		
 		HashMap<String, Object> userInfo = getUserInfo(accessToken);
         String nickname = (String)userInfo.get("nickname");
+		
+        session.setAttribute("SID", nickname);
+        String sid = (String) session.getAttribute("SID");
         
         if(nickname == null) {
         	rv.setUrl("/tm/main.tm");
@@ -183,12 +183,11 @@ public class MainController {
 	    }
 	
 	@RequestMapping("/logoutProc.tm")
-	public ModelAndView logoutProc(ModelAndView mv) {
+	public ModelAndView logoutProc(HttpSession session, ModelAndView mv) {
 		System.out.println("************************************** logout");
 		
-		boolean islogin = false;
-		
-		mv.addObject("ISLOGIN", islogin);		
+		String sid = (String) session.getAttribute("SID");
+		session.removeAttribute("SID");
 		mv.setViewName("main");
 		
 		return mv;
@@ -196,3 +195,4 @@ public class MainController {
 	
 	
 }
+
