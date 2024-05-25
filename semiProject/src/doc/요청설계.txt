@@ -18,8 +18,10 @@
 처리함수	:	getEdit()
 응답문서	:	forward - /webapp/WEB-INF/views/edit.jsp
 
-요청내용	: 
-파라미터	:
-컨트롤러	:
-처리함수	:
-응답문서	:
+요청내용	: 	/tm/editProc.tm
+파라미터	:	
+컨트롤러	:	com.human.tm.controller.MainController
+처리함수	:	editProc()
+응답문서	:	redirect ] 
+					성공 : /tm/
+					실패 : /tm/edit.tm
