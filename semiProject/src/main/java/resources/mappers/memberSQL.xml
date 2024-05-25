@@ -3,9 +3,6 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mSQL">
-	
-	
-	
 	<!-- 사용자가 관심있는 분야에 해당하는 상품 가져오는 질의명령 -->
 	<select id="typeList" parameterType="string" resultType="mVO">
 		SELECT
@@ -16,5 +13,23 @@
 			product_type=#{interest_type}
 			and product_bank = #{main_bank}
 	</select>
+	
+	<!-- 닉네임 총 카운트 가져오기 -->
+	<select id="nickCount" resultType="int">
+		SELECT
+			Count(*) cnt
+		FROM
+			chat_member
+		WHERE	
+			nickname=#{nickname}
+	</select>
+	
+	<insert id="addMemb" parameterType="mVO">
+		INSERT INTO 
+			chat_member(mno, nickname, birth, main_bank, interest_type)
+		VALUES(
+			membSeq.NEXTVAL, #{nickname}, #{birth}, #{main_bank}, #{interest_type}
+		)
+	</insert>
 	
 </mapper>

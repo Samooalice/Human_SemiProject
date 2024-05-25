@@ -7,12 +7,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class TmMain {
 	
-	@RequestMapping("/main.tm")
+	@RequestMapping("/")
 	public String getMain() {
 		return "main";
 	}
-	
-	
-	
-
 }

@@ -10,18 +10,25 @@ import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.human.tm.dao.MemberDao;
+import com.human.tm.vo.MemberVO;
 
 @Controller
 public class MainController {
 	
-	@RequestMapping("/")
+	@Autowired
+	MemberDao mDao;
+	
+	@RequestMapping("/main.tm")
 	public String getMain() {
 		return "main";
 	}
@@ -36,8 +43,13 @@ public class MainController {
 		return "result";
 	}
 	
+	@RequestMapping("/join.tm")
+	public String getJoin() {
+		return "join";
+	}
+	
 	@RequestMapping("/loginProc.tm")
-	public ModelAndView loginProc(@RequestParam String code, ModelAndView mv, HttpSession session) {
+	public ModelAndView loginProc(@RequestParam String code, ModelAndView mv, HttpSession session, MemberVO mVO, RedirectView rv) {
 		System.out.println("************************************** loginProc in");
 		System.out.println("##################### 인가 코드 : " + code);	
 		
@@ -46,22 +58,40 @@ public class MainController {
 		
 		HashMap<String, Object> userInfo = getUserInfo(accessToken);
         String nickname = (String)userInfo.get("nickname");
-		
-        session.setAttribute("SID", nickname);
-        String sid = (String) session.getAttribute("SID");
-        System.out.println("################################# SID : "+ sid + " / nickname : " + nickname);
         
-        mv.addObject("NAME", nickname);
-		mv.setViewName("main");
-		
-		return mv;
+        if(nickname == null) {
+        	rv.setUrl("/tm/main.tm");
+        	mv.setView(rv);
+        } else {
+        	System.out.println(nickname);
+        	int cnt = mDao.nickCount(nickname);
+        	// cnt == 0
+        	if(cnt == 0) {
+        		// 회원가입 안됨
+        		// 부가정보 입력창으로 보냄(리다이렉트)
+        		// nickname을 파라미터로 회원부가입력 페이지로 보냄
+        		rv.setUrl("/tm/join.tm?nickname="+nickname);
+        		mv.setView(rv);
+        	} else {
+        		// cnt == 1
+        		// 회원가입이 됨
+        		// 메인
+        		session.setAttribute("SID", nickname);
+        		rv.setUrl("/tm/main.tm?nickname="+nickname);
+        		mv.setView(rv);
+        	}
+        }
+        
+        return mv;
 	}
+	
+	
 	
 	private String getAccessToken(String code) {
         String accessToken = "";
         String reqUrl = "https://kauth.kakao.com/oauth/token";
         String client_id = "10f828f2b853279cbebdc8641fe75b33";
-        String redirect_uri = "http://58.72.151.124:6002/tm/loginProc.tm";
+        String redirect_uri = "http://58.72.151.124:6003/tm/loginProc.tm";
 
         try {
             URL url = new URL(reqUrl);

@@ -50,7 +50,7 @@ CREATE TABLE chat_member(
         CONSTRAINT BOT_NICKNAME_NN not null,
     period_day VARCHAR2(15 CHAR)
         CONSTRAINT BOT_PERIOD_NN not null,
-    birthdate DATE
+    birth VARCHAR2(50 CHAR)
         CONSTRAINT BOT_BIRTH_NN not null,
     gen CHAR(1)
         CONSTRAINT BOT_GEN_NN not null,
