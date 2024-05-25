@@ -11,6 +11,12 @@
 응답문서	:	redirect ]
 					성공 : /tm/
 					실패 : /tm/join.tm
+					
+요청내용	:	/tm/edit.tm
+파라미터	:	없음
+컨트롤러	:	com.human.tm.controller.MainController
+처리함수	:	getEdit()
+응답문서	:	forward - /webapp/WEB-INF/views/edit.jsp
 
 요청내용	: 
 파라미터	:

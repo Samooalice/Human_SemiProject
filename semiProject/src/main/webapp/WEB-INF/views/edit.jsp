@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ResultView</title>
+<title>EditView</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/tm/css/w3.css">
@@ -25,10 +25,6 @@
 		$('#join').click(function(){
 	        $('#frm').submit();
 		});
-		
-		$('#main').click(function(){
-			$(location).attr('href','/tm/');
-		});
 	});
 </script>
 
@@ -36,7 +32,7 @@
 </head>
 <body>
 	<div class="w3-content mxw650">
-	 	<h1 class="w3-center w3-amber w3-padding">Join Page</h1>
+	 	<h1 class="w3-center w3-amber w3-padding">Edit Page</h1>
 		    <form action="/tm/editProc.tm" method="POST" id="frm"
 		    class="w3-green w3-center w3-margin-top w3-card-4">
 		        
@@ -92,12 +88,11 @@
 			        	<option value="선택안함">선택안함</option>
 			        </select>
 		        </div>
-		        
 		    </form>
 		    
- 				<div class="w3-col w3-padding w3-center">
-			        <div class="w3-btn w3-center w3-brown w3-margin-top w3-margin-bottom" id="main">메인으로</div>
-			        <div class="w3-btn w3-center w3-brown w3-margin-top w3-margin-bottom" id="join">정보등록하기</div>
+		        <div class="w3-col w3-padding w3-center">
+			        <div class="w3-btn w3-center w3-brown w3-margin-top w3-margin-bottom" id="edit">정보수정하기</div>
+			        <div class="w3-btn w3-center w3-brown w3-margin-top w3-margin-bottom" id="edit">정보수정하기</div>
 		        </div>
 	</div>
 </body>

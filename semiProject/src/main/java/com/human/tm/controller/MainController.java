@@ -49,6 +49,11 @@ public class MainController {
 	public String getJoin() {
 		return "join";
 	}
+	
+	@RequestMapping("/edit.tm")
+	public String getEdit() {
+		return "join";
+	}
 
 	@RequestMapping("/loginProc.tm")
 	public ModelAndView loginProc(@RequestParam String code, ModelAndView mv, HttpSession session, MemberVO mVO, RedirectView rv) {

@@ -23,15 +23,19 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#login').click(function(){
-			$(location).attr('href', '/tm/login.tm')
+			$(location).attr('href', '/tm/login.tm');
 		});
 		
 		$('#logout').click(function(){
-			$(location).attr('href', '/tm/logoutProc.tm')
+			$(location).attr('href', '/tm/logoutProc.tm');
+		});
+		
+		$('#edit').click(function(){
+			$(location).attr('href','/tm/edit.tm');
 		});
 
 		$('#chat').click(function(){
-			$(location).attr('href', 'http://pf.kakao.com/_xbwxixcG/chat')
+			$(location).attr('href', 'http://pf.kakao.com/_xbwxixcG/chat');
 		});
 		
 		$('#link1').click(function(){
@@ -85,6 +89,7 @@
 	      <hr class="w3-opacity">
 	      <div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30">
 	      	<div><button id="chat" class="w3-button w3-block w3-green w3-round w3-margin-bottom">채팅시작</button></div>
+	      	<div><button id="edit" class="w3-button w3-block w3-green w3-round w3-margin-bottom">정보수정</button></div>
 	      	<div><button id="logout" class="w3-button w3-block w3-green w3-round">로그아웃</button></div> 
 	      </div>      
       </div>
