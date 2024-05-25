@@ -38,15 +38,15 @@
 <body>
 	<div class="w3-content mxw650">
 	 	<h1 class="w3-center w3-amber w3-padding">Edit Page</h1>
-		    <form action="/tm/editProc.tm" method="POST" id="frm" class="w3-green w3-center w3-margin-top w3-card-4">
+		    <form action="/tm/editProc.tm" method="POST" id="frm" class="w3-col w3-light-green w3-center w3-margin-top w3-card-4">
 		        
-		        <div class="w3-col w3-padding w3-margin-top">
-			        <label for="nickname">당신의 닉네임은 무엇입니까? : </label>
-			        <input type="hidden" name="nickname" value="${param.nickname}" id="nickname" class="w3-border" readonly/>
+		       <div class="w3-col w3-padding mgh20">
+		        	<label for="nickname" class="w3-col lbl">당신의 닉네임은 무엇입니까? : </label>
+			        <input type="hidden" name="nickname" value="${param.nickname}" id="nickname" class="w3-col w3-border" readonly/>
 		        </div>
 		        
-		        <div class="w3-col w3-padding w3-margin-top">
-			        <label for="period_day">희망하는 예치기간은 몇 개월입니까? : </label>
+		        <div class="w3-col w3-padding mgh20">
+			        <label for="period_day" class="w3-col lbl">희망하는 예치기간은 몇 개월입니까? : </label>
 			        <select name="period_day" id="period_day">
 			        	<option value="12개월">12개월</option>
 			        	<option value="24개월">24개월</option>
@@ -54,8 +54,8 @@
 			        </select>
 		        </div>
 		        
-		        <div class="w3-col w3-padding w3-margin-top">
-			        <label for="birth">당신의 나이는 어떤 층에 속합니까? : </label>
+		        <div class="w3-col w3-padding mgh20">
+			        <label for="birth" class="w3-col lbl">당신의 나이는 어떤 층에 속합니까? : </label>
 			       <select name="birth" id="birth">
 			        	<option value="청년층">청년층</option>
 			        	<option value="노년층">노년층</option>
@@ -63,16 +63,16 @@
 			        </select>
 		        </div>
 		        
-		        <div class="w3-col w3-padding w3-margin-top">
-			        <label for="gen">당신의 성별은 무엇입니까? : </label>
+		        <div class="w3-col w3-padding mgh20">
+			        <label for="gen" class="w3-col lbl">당신의 성별은 무엇입니까? : </label>
 			        <select name="gen" id="gen">
 			        	<option value="M">M</option>
 			        	<option value="F">F</option>
 			        </select>
 		        </div>
 		        
-		        <div class="w3-col w3-padding w3-margin-top">
-			        <label for="main_bank">당신이 희망하는 은행은 어떤 은행입니까? : </label>
+		        <div class="w3-col w3-padding mgh20">
+			        <label for="main_bank" class="w3-col lbl">당신이 희망하는 은행은 어떤 은행입니까? : </label>
 			        <select name="main_bank" id="main_bank">
 			        	<option value="국민은행">국민은행</option>
 			        	<option value="신한은행">신한은행</option>
@@ -82,8 +82,8 @@
 			        </select>
 		        </div>
 		        
-		        <div class="w3-col w3-padding w3-margin-top">
-			        <label for="interest_type">당신이 희망하는 상품종류는 무엇입니까? : </label>
+		        <div class="w3-col w3-padding mgh20">
+			        <label for="interest_type" class="w3-col lbl">당신이 희망하는 상품종류는 무엇입니까? : </label>
 			        <select name="interest_type" id="interest_type">
 			        	<option value="저축">저축</option>
 			        	<option value="카드">카드</option>
@@ -92,11 +92,12 @@
 			        	<option value="선택안함">선택안함</option>
 			        </select>
 		        </div>
+		        
 		    </form>
 		    
 		        <div class="w3-col w3-padding w3-center">
-			        <div class="w3-btn w3-center w3-brown w3-margin-top w3-margin-bottom" id="main">메인으로</div>
-			        <div class="w3-btn w3-center w3-brown w3-margin-top w3-margin-bottom" id="edit">정보수정하기</div>
+			        <div class="w3-btn w3-center w3-orange w3-margin-top w3-margin-bottom" id="main">메인으로</div>
+			        <div class="w3-btn w3-center w3-blue w3-margin-top w3-margin-bottom" id="edit">정보수정하기</div>
 		        </div>
 	</div>
 </body>

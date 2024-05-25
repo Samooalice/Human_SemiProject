@@ -142,7 +142,7 @@ public class MainController {
 	public ModelAndView editProc(MemberVO mVO, RedirectView rv, ModelAndView mv) {
 		System.out.println("************************************** editProc in");
 		int cnt = mDao.editMembInfo(mVO);
-		
+		System.out.println(cnt);
 		if(cnt == 1) {
 			rv.setUrl("/tm/main.tm");
 		}else {
