@@ -41,8 +41,8 @@
 		    <form action="/tm/editProc.tm" method="POST" id="frm" class="w3-col w3-light-green w3-center w3-margin-top w3-card-4">
 		        
 		       <div class="w3-col w3-padding mgh20">
-		        	<label for="nickname" class="w3-col lbl">당신의 닉네임은 무엇입니까? : </label>
-			        <input type="hidden" name="nickname" value="${param.nickname}" id="nickname" class="w3-col w3-border" readonly/>
+		        	<label for="nickname" class="w3-col lbl mgb20">당신의 닉네임은 무엇입니까? : </label>
+			        <input type="text" name="nickname" value="${SID}" id="nickname" readonly/>
 		        </div>
 		        
 		        <div class="w3-col w3-padding mgh20">

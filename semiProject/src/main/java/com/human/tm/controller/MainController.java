@@ -65,7 +65,7 @@ public class MainController {
 	    } catch (Exception e) {
 	        System.out.println("Error getting access token: " + e.getMessage());
 	        e.printStackTrace();
-	        rv.setUrl("/tm/error.tm"); // 에러 페이지로 리다이렉트
+	        rv.setUrl("/tm/main.tm");
 	        mv.setView(rv);
 	        return mv;
 	    }
@@ -76,7 +76,7 @@ public class MainController {
 	    } catch (Exception e) {
 	        System.out.println("Error getting user info: " + e.getMessage());
 	        e.printStackTrace();
-	        rv.setUrl("/tm/error.tm"); // 에러 페이지로 리다이렉트
+	        rv.setUrl("/tm/main.tm");
 	        mv.setView(rv);
 	        return mv;
 	    }
@@ -96,7 +96,7 @@ public class MainController {
 	        } catch (Exception e) {
 	            System.out.println("Error checking nickname count: " + e.getMessage());
 	            e.printStackTrace();
-	            rv.setUrl("/tm/error.tm"); // 에러 페이지로 리다이렉트
+	            rv.setUrl("/tm/main.tm");
 	            mv.setView(rv);
 	            return mv;
 	        }
@@ -115,7 +115,7 @@ public class MainController {
 	        } catch (UnsupportedEncodingException e) {
 	            System.out.println("Error encoding nickname: " + e.getMessage());
 	            e.printStackTrace();
-	            rv.setUrl("/tm/error.tm"); // 에러 페이지로 리다이렉트
+	            rv.setUrl("/tm/join.tm");
 	        }
 	    }
 
@@ -141,8 +141,10 @@ public class MainController {
 	@RequestMapping("/editProc.tm")
 	public ModelAndView editProc(MemberVO mVO, RedirectView rv, ModelAndView mv) {
 		System.out.println("************************************** editProc in");
+		System.out.println(mVO);
 		int cnt = mDao.editMembInfo(mVO);
 		System.out.println(cnt);
+		
 		if(cnt == 1) {
 			rv.setUrl("/tm/main.tm");
 		}else {
