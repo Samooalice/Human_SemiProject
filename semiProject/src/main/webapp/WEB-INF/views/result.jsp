@@ -25,6 +25,10 @@
 		$('#home').click(function(){
 			$(location).attr('href', 'http://58.72.151.124:6003/tm/');
 		});
+		
+		$(document.frm.type).change(function(){
+			$('#frm').submit();
+		});
 	});
 </script>
 
@@ -41,8 +45,59 @@
 </c:if>
 		</div>
  		
+ 		<form method="GET" action="/tm/result.tm" name="frm" id="frm" >
+ 		 <div class="w3-col w3-padding">
+                <label class="w3-col m3 lbl w3-text-gray w3-right-align">성 별 : </label>
+                <div class="w3-col m8">
+                    <div class="w3-half w3-center">
+                        <input type="radio" name="type" id="type" 
+                                class="w3-radio rdo" value="type">
+                        <label for="type" class="genlbl w3-text-gray">투자성향</label>
+                    </div>
+                    <div class="w3-half w3-center">
+                        <input type="radio" name="type" id="type" class="w3-radio rdo" value="bank">
+                        <label for="bank" class="genlbl w3-text-gray">주거래은행</label>
+                    </div>
+                    <div class="w3-half w3-center">
+                        <input type="radio" name="type" id="type" class="w3-radio rdo" value="birth">
+                        <label for="birth" class="genlbl w3-text-gray">연령</label>
+                    </div>
+                </div>
+            </div>
+ 		</form>
  		
- 	</div>
+		<div class="w3-col">
+			<div class="w3-col w3-center">
+				<div class="inblock w3-left pdr5" style="width: 100px;"><div class="w3-blue-gray">글번호</div></div>
+				<div class="inblock w3-right" style="width: 100px;"><div class="w3-blue-gray">파일</div></div>
+				<div class="inblock w3-right pdr5" style="width: 100px;"><div class="w3-blue-gray">작성일</div></div>
+				<div class="inblock w3-right pdr5" style="width: 100px;"><div class="w3-blue-gray">작성자</div></div>
+				<div class="w3-rest pdr5"><div class="w3-blue-gray">글제목</div></div>
+			</div>
+<c:if test="${not empty LIST}">
+	<c:forEach var="DATA" items="${LIST}">
+	
+				<div class="inblock w3-left pdr5" style="width: 100px;"><div class="w3-center fbno">0</div>
+				<div class="inblock w3-right" style="width: 100px;"><div class="w3-center file">${DATA.PRODUCT_BANK}</div></div>
+				<div class="inblock w3-right pdr5" style="width: 100px;"><small class="w3-center wdate">${DATA.PRODUCT_TYPE}</small></div>
+				<div class="inblock w3-right pdr5" style="width: 100px;"><div class="w3-center writer">${DATA.JOIN_TARGET}</div></div>
+				<div class="w3-rest pdr5">
+					<div class="title">${DATA.PRODUCT_NAME}</div>
+				  <div class="w3-button w3-blue w3-right" id="chkBtn">check</div>
+				</div>
+			</div>
+		</div>
+	</c:forEach>
+	
+	</c:if> <!-- 리스트가 비어있지 않은 경우 방명록 리스트 조건처리 닫는 태그 -->
+<c:if test="${empty LIST}">
+			<div class="w3-col w3-border-bottom w3-margin-top">
+				<h3 class="w3-center w3-text-gray">* 아직 작성된 글이 없습니다. *</h3>
+			</div>
+</c:if>
+		</div>
+ 		
+ 
  	
 </body>
 </html>
