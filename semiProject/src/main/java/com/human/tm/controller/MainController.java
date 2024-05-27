@@ -260,6 +260,14 @@ public class MainController {
 		
 		return mv;
 	}
+	@RequestMapping("/getJsonVO.tm")
+	public ModelAndView getJsonVO(HttpSession session, ModelAndView mv, MemberVO mVO) {
+		System.out.println("************************************** getJson");
+		
+		mv.setViewName("resultToVO");
+		
+		return mv;
+	}
 	
 	@RequestMapping("/getResult.tm")
 	public ModelAndView getResult(HttpSession session, ModelAndView mv, MemberVO mVO) {
@@ -268,7 +276,7 @@ public class MainController {
 		System.out.println(mVO.getBirth());
 		System.out.println(mVO.getInterest_type());
 		System.out.println(mVO.getMain_bank());
-		mv.setViewName("main");
+		mv.setViewName("result_chart");
 		
 		return mv;
 	}
