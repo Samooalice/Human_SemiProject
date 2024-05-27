@@ -46,6 +46,9 @@
 		</div>
  		
  		<form method="GET" action="/tm/result.tm" name="frm" id="frm" >
+ 	<c:if test="${not empty SID}">
+ 			<input type="hidden" name="nickname" value="${SID}">
+ 	</c:if>
  		 <div class="w3-col w3-padding">
                 <label class="w3-col m3 lbl w3-text-gray w3-right-align">성 별 : </label>
                 <div class="w3-col m8">

@@ -279,6 +279,7 @@ public class MainController {
 		System.out.println(mVO.getMain_bank());
 
 		String nickname = (String) session.getAttribute("SID");
+		mVO.setNickname(nickname);
 		String type = mVO.getType();		
 		List<MemberVO> list = null;
 		if(type == null) {

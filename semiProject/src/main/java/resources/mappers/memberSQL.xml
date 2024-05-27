@@ -6,7 +6,7 @@
 
 
 
- <select id="typeList1" parameterType="string" resultType="mVO">
+ <select id="typeList1" parameterType="mVO" resultType="mVO">
 		SELECT
    			product_name, product_bank, product_type, interest_type
 		FROM
@@ -16,7 +16,7 @@
      		AND product_type = Interest_type  
 	</select>
 	
-	<select id="typeList2" parameterType="string" resultType="mVO">
+	<select id="typeList2" parameterType="mVO" resultType="mVO">
 		SELECT
    			product_name, product_bank, product_type, interest_type
 		FROM
@@ -26,7 +26,7 @@
      		AND product_bank = Main_bank
 	</select>
 	
-	<select id="typeList3" parameterType="string" resultType="mVO">
+	<select id="typeList3" parameterType="mVO" resultType="mVO">
 		SELECT
    			 product_name, product_bank, product_type, interest_type
 		FROM
