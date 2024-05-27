@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -40,10 +41,10 @@ public class MainController {
 		return "redirect";
 	}
 	
-	@RequestMapping("/result.tm")
-	public String getResult() {
-		return "result";
-	}
+//	@RequestMapping("/result.tm")
+//	public String getResult() {
+//		return "result";
+//	}
 	
 	@RequestMapping("/join.tm")
 	public String getJoin() {
@@ -276,8 +277,24 @@ public class MainController {
 		System.out.println(mVO.getBirth());
 		System.out.println(mVO.getInterest_type());
 		System.out.println(mVO.getMain_bank());
-		mv.setViewName("result_chart");
+
+		String nickname = (String) session.getAttribute("SID");
+		String type = mVO.getType();		
+		List<MemberVO> list = null;
+		if(type == null) {
+			list = mDao.goodsList1(mVO);
+		} else if (type =="type") {
+			list = mDao.goodsList2(mVO);
+		} else if(type == "bank") {
+			list = mDao.goodsList3(mVO);
+		} else {
+			list = mDao.goodsList1(mVO);
+		}
 		
+		mv.addObject("LIST", list);
+		mv.addObject("DATA", mVO);
+		mv.setViewName("result");
+		System.out.print(mv.getViewName());
 		return mv;
 	}
 }
