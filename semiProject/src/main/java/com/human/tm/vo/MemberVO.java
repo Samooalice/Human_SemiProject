@@ -4,10 +4,8 @@ import java.sql.Clob;
 
 public class MemberVO {
 	private int product_no, mno;
-	private String nickname, period_day, birth, gen, main_bank, interest_type, product_type, product_bank, product_name, isshow, join_target;
+	private String nickname, period_day, birth, gen, main_bank, interest_type, product_type, product_bank, product_name, isshow, join_target, type;
 	private Clob product_file;
-	
-	
 	public int getProduct_no() {
 		return product_no;
 	}
@@ -20,18 +18,29 @@ public class MemberVO {
 	public void setMno(int mno) {
 		this.mno = mno;
 	}
-	
-	public String getGen() {
-		return gen;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setGen(String gen) {
-		this.gen = gen;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getPeriod_day() {
+		return period_day;
+	}
+	public void setPeriod_day(String period_day) {
+		this.period_day = period_day;
 	}
 	public String getBirth() {
 		return birth;
 	}
 	public void setBirth(String birth) {
 		this.birth = birth;
+	}
+	public String getGen() {
+		return gen;
+	}
+	public void setGen(String gen) {
+		this.gen = gen;
 	}
 	public String getMain_bank() {
 		return main_bank;
@@ -63,18 +72,6 @@ public class MemberVO {
 	public void setProduct_name(String product_name) {
 		this.product_name = product_name;
 	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-	public String getPeriod_day() {
-		return period_day;
-	}
-	public void setPeriod_day(String period_day) {
-		this.period_day = period_day;
-	}
 	public String getIsshow() {
 		return isshow;
 	}
@@ -87,6 +84,12 @@ public class MemberVO {
 	public void setJoin_target(String join_target) {
 		this.join_target = join_target;
 	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	public Clob getProduct_file() {
 		return product_file;
 	}
@@ -95,14 +98,14 @@ public class MemberVO {
 	}
 	@Override
 	public String toString() {
-		return "MemberVO [product_no=" + product_no + ", mno=" + mno + ", birth=" + birth + ", main_bank=" + main_bank
-				+ ", interest_type=" + interest_type + ", product_type=" + product_type + ", product_bank="
-				+ product_bank + ", product_name=" + product_name + ", nickname=" + nickname + ", period_day="
-				+ period_day + ", isshow=" + isshow + ", join_target=" + join_target + ", product_file=" + product_file
-				+ "]";
+		return "MemberVO [product_no=" + product_no + ", mno=" + mno + ", nickname=" + nickname + ", period_day="
+				+ period_day + ", birth=" + birth + ", gen=" + gen + ", main_bank=" + main_bank + ", interest_type="
+				+ interest_type + ", product_type=" + product_type + ", product_bank=" + product_bank
+				+ ", product_name=" + product_name + ", isshow=" + isshow + ", join_target=" + join_target + ", type="
+				+ type + ", product_file=" + product_file + "]";
 	}
 	
-	
+
 
 	
 }

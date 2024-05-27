@@ -15,6 +15,7 @@
     <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
 	
 	<bean id="Crawling" class="com.human.tm.scheduler.Crawling" />
+	<bean id="ApiCrawling" class="com.human.tm.scheduler.ApiCrawling" />
 	
 	<bean id="CrawlingJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean" 
 			p:jobClass="com.human.tm.scheduler.CrawlingJob"
@@ -26,8 +27,24 @@
 		</property>
 	</bean>
 	
+	<bean id="ApiCrawlingJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean" 
+			p:jobClass="com.human.tm.scheduler.ApiCrawlingJob"
+			p:durability="true">
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="apicrawl" value-ref="ApiCrawling" />
+			</map>
+		</property>
+	</bean>
+	
 	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean"
 		p:jobDetail-ref="CrawlingJob"
+		p:startDelay="1000"
+		p:cronExpression="0 0 1 * * ?">
+	</bean>
+	
+	<bean id="apicronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean"
+		p:jobDetail-ref="ApiCrawlingJob"
 		p:startDelay="1000"
 		p:cronExpression="0 0 1 * * ?">
 	</bean>
@@ -36,6 +53,7 @@
 		<property name="triggers">
 			<list>
 				<ref bean="cronTrigger" />
+				<ref bean="apicronTrigger" />
 			</list>
 		</property>
 	</bean>
