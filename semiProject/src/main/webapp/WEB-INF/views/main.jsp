@@ -41,12 +41,7 @@
 		$('#link1').click(function(){
 			$(location).attr('href', 'http://pf.kakao.com/_xbzjxcG/chat');
 		});
-		
-		$('#link2').click(function(){
-			$(location).attr('href', 'https://namu.wiki/w/%EB%AA%A8%EB%91%90%EC%9D%98%EB%A7%88%EB%B8%94%20for%20kakao/%EB%B9%84%ED%8C%90?from=%EC%A3%BC%EC%9E%91%EC%9D%98%20%EB%A7%88%EB%B8%94#fn-3');
-		});
 	});
-	
 	
 </script>
 
@@ -57,7 +52,7 @@
 <header class="w3-display-container w3-center">
   <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download </button>
   <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="https://www.w3schools.com/w3images/app.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
+    <img class="w3-image" src="/tm/image/mainview/main8.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
     
 <c:if test="${empty SID}">
@@ -98,12 +93,10 @@
     </div>
   </div>
 
-  <a href="#sc" class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey">Take Tour</a>
-
 </header>
 
 <!-- 대체뭐니 설명 섹션 -->
-<div class="w3-padding-64 w3-white">
+<div class="w3-padding-64 w3-light-gray">
   <div class="w3-row-padding">
     <div class="w3-col l8 m6">
       <h1 class="w3-jumbo"><b>That's Money</b></h1>
@@ -147,42 +140,24 @@
 지식 확장: 다양한 전문가의 분석과 조언을 통해 금융지식 확장
 투자 효율성: 맞춤형 정보를 바탕으로, 보다 효율적인 자산관리와 투자 가능</pre>
 		
-      <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small" onclick="document.getElementById('download').style.display='block'">
-        <i class="fa fa-download"></i> Download Application
-      </button>
-      <p>Available for <i class="fa fa-android w3-xlarge w3-text-green"></i> <i class="fa fa-apple w3-xlarge"></i> <i class="fa fa-windows w3-xlarge w3-text-blue"></i></p>
     </div>
     <div class="w3-col l4 m6">
-      <img src="https://www.w3schools.com/w3images/app4.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
+      <img src="/tm/image/mainview/app1.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
+      <img src="/tm/image/mainview/app5.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
+      <img src="/tm/image/mainview/app4.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
+      <img src="/tm/image/mainview/view13.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
+      <img src="/tm/image/mainview/view6.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
       <div class="w3-center w3-hide-large w3-hide-medium">
-        <button class="w3-button w3-block w3-padding-large" onclick="document.getElementById('download').style.display='block'">
-          <i class="fa fa-download"></i> Download Application
-        </button>
-        <img src="https://www.w3schools.com/w3images/app5.jpg" class="w3-image w3-margin-top" width="335" height="471">
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
-<div id="download" class="w3-modal w3-animate-opacity">
-  <div class="w3-modal-content" style="padding:32px">
-    <div class="w3-container w3-white">
-      <i onclick="document.getElementById('download').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
-      <h2 class="w3-wide">DOWNLOAD</h2>
-      <p>Download the app in AppStore, Google Play or Microsoft Store.</p>
-      <i class="fa fa-android w3-large"></i> <i class="fa fa-apple w3-large"></i> <i class="fa fa-windows w3-large"></i>
-      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
-      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('download').style.display='none'">Fake Download</button>
-    </div>
-  </div>
-</div>
-
 <!-- Clarity Section -->
-<div id="Clarity" class="w3-padding-64 w3-light-grey">
+<div id="Clarity" class="w3-padding-64 w3-gray">
   <div class="w3-row-padding">
     <div class="w3-col l4 m6">
-      <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="https://www.w3schools.com/w3images/app2.jpg" alt="App" width="335" height="471">
+      <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="/tm/image/mainview/footter2.jpg" alt="App" width="335" height="471">
     </div>
     <div class="w3-col l8 m6">
       <span id="sc"><h1 class="w3-xxlarge"><b>고객님들에게 전하는 말</b></h1></span>
@@ -193,120 +168,6 @@
   </div>
 </div>
 
-<!-- Features Section -->
-<div class="w3-container w3-padding-64 w3-dark-grey w3-center">
-  <h1 class="w3-jumbo"><b>Features</b></h1>
-  <p>This app is just so lorem ipsum.</p>
-
-  <div class="w3-row" style="margin-top:64px">
-    <div class="w3-col s3">
-      <i class="fa fa-bolt w3-text-orange w3-jumbo"></i>
-      <p>Fast</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-heart w3-text-red w3-jumbo"></i>
-      <p>Loved</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-camera w3-text-yellow w3-jumbo"></i>
-      <p>Clarity</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-battery-full w3-text-green w3-jumbo"></i>
-      <p>Power</p>
-    </div>
-  </div>
-
-  <div class="w3-row" style="margin-top:64px">
-    <div class="w3-col s3">
-      <i class="fa fa-diamond w3-text-white w3-jumbo"></i>
-      <p>Sharp</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-cloud w3-text-blue w3-jumbo"></i>
-      <p>Cloud</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-globe w3-text-amber w3-jumbo"></i>
-      <p>Global</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-hdd-o w3-text-cyan w3-jumbo"></i>
-      <p>Storage</p>
-    </div>
-  </div>
-  
-  <div class="w3-row" style="margin-top:64px">
-    <div class="w3-col s3">
-      <i class="fa fa-user w3-text-sand w3-jumbo"></i>
-      <p>Safe</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-shield w3-text-orange w3-jumbo"></i>
-      <p>Stabile</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-wifi w3-text-grey w3-jumbo"></i>
-      <p>Connected</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-image w3-text-pink w3-jumbo"></i>
-      <p>HD</p>
-    </div>
-  </div>
-</div>
-
-<!-- Pricing Section -->
-<div class="w3-padding-64 w3-center w3-white">
-  <h1 class="w3-jumbo"><b>Pricing</b></h1>
-  <p class="w3-large">Choose a pricing plan that fits your needs.</p>
-  <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-half w3-section">
-      <ul class="w3-ul w3-card w3-hover-shadow">
-        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-        <li class="w3-padding-16"><b>250</b> Photos</li>
-        <li class="w3-padding-16"><b>10</b> Features</li>
-        <li class="w3-padding-16"><b>No</b> Ads</li>
-        <li class="w3-padding-16"><b>Office hours</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-opacity">$ 25</h2>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button id="link1" class="w3-button w3-black w3-padding-large" ><i class="fa fa-download"></i> Download</button>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-half w3-section">
-      <ul class="w3-ul w3-card w3-hover-shadow">
-        <li class="w3-red w3-xlarge w3-padding-32">Premium</li>
-        <li class="w3-padding-16"><b>1000</b> Photos</li>
-        <li class="w3-padding-16"><b>50</b> Features</li>
-        <li class="w3-padding-16"><b>No</b> Ads</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-opacity">$ 99</h2>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button id = "link2" class="w3-button w3-black w3-padding-large" > <i class="fa fa-download"></i> Download</button> <!-- 웹사이트 연결 임시 테스트 -->
-        </li>
-      </ul>
-    </div>
-  </div>
-  <br>
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
-  <div class="w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
 
 <script>
 // Slideshow
