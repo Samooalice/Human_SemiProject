@@ -261,5 +261,15 @@ public class MainController {
 		return mv;
 	}
 	
-	
+	@RequestMapping("/getResult.tm")
+	public ModelAndView getResult(HttpSession session, ModelAndView mv, MemberVO mVO) {
+		System.out.println("************************************** getResult");
+		
+		System.out.println(mVO.getBirth());
+		System.out.println(mVO.getInterest_type());
+		System.out.println(mVO.getMain_bank());
+		mv.setViewName("main");
+		
+		return mv;
+	}
 }

@@ -34,7 +34,7 @@
                     $('#frm').append(el_B);
                     $('#frm').append(el_I);
                     $('#frm').append(el_Mb);
-                    $('#frm').attr('action', '/tm/testVO.tm')
+                    $('#frm').attr('action', '/tm/getResult.tm')
                     $('#frm').submit();
                     
                     $("#age").text("Age: " + data.age);
