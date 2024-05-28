@@ -3,7 +3,7 @@ package com.human.tm.vo;
 import java.sql.Clob;
 
 public class MemberVO {
-	private int product_no, mno;
+	private int product_no, mno, rno, nowPage, startRno, endRno, total;
 	private String nickname, period_day, birth, gen, main_bank, interest_type, product_type, product_bank, product_name, isshow, join_target, type;
 	private Clob product_file;
 	public int getProduct_no() {
@@ -17,6 +17,36 @@ public class MemberVO {
 	}
 	public void setMno(int mno) {
 		this.mno = mno;
+	}
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	public int getNowPage() {
+		return nowPage;
+	}
+	public void setNowPage(int nowPage) {
+		this.nowPage = nowPage;
+	}
+	public int getStartRno() {
+		return startRno;
+	}
+	public void setStartRno(int startRno) {
+		this.startRno = startRno;
+	}
+	public int getEndRno() {
+		return endRno;
+	}
+	public void setEndRno(int endRno) {
+		this.endRno = endRno;
+	}
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
 	}
 	public String getNickname() {
 		return nickname;
@@ -98,14 +128,14 @@ public class MemberVO {
 	}
 	@Override
 	public String toString() {
-		return "MemberVO [product_no=" + product_no + ", mno=" + mno + ", nickname=" + nickname + ", period_day="
-				+ period_day + ", birth=" + birth + ", gen=" + gen + ", main_bank=" + main_bank + ", interest_type="
-				+ interest_type + ", product_type=" + product_type + ", product_bank=" + product_bank
-				+ ", product_name=" + product_name + ", isshow=" + isshow + ", join_target=" + join_target + ", type="
-				+ type + ", product_file=" + product_file + "]";
+		return "MemberVO [product_no=" + product_no + ", mno=" + mno + ", rno=" + rno + ", nowPage=" + nowPage
+				+ ", startRno=" + startRno + ", endRno=" + endRno + ", total=" + total + ", nickname=" + nickname
+				+ ", period_day=" + period_day + ", birth=" + birth + ", gen=" + gen + ", main_bank=" + main_bank
+				+ ", interest_type=" + interest_type + ", product_type=" + product_type + ", product_bank="
+				+ product_bank + ", product_name=" + product_name + ", isshow=" + isshow + ", join_target="
+				+ join_target + ", type=" + type + ", product_file=" + product_file + "]";
 	}
+
 	
-
-
 	
 }

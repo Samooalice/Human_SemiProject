@@ -13,18 +13,15 @@ public class MemberDao {
 	SqlSessionTemplate session;
 	
 	// 회원가입이 된 회원의 관심분야에 해당하는 상품에 관한 소식들을 보여주는 함수
-		public List<MemberVO> goodsList1(MemberVO mVO) {
-			return session.selectList("mSQL.typeList1", mVO);
+		public List<MemberVO> goodsList(MemberVO mVO) {
+			return session.selectList("mSQL.typeList", mVO);
 		}
 		
-		public List<MemberVO> goodsList2(MemberVO mVO) {
-			return session.selectList("mSQL.typeList2", mVO);
+	// 	상품 리스트 전체 갯수 조회 함수
+		public int listCount(MemberVO mVO) {
+			return session.selectOne("mSQL.selTotal", mVO);
 		}
-		
-		public List<MemberVO> goodsList3(MemberVO mVO) {
-			return session.selectList("mSQL.typeList3", mVO);
-		}
-	
+
 	// 회원가입된 회원의 닉네임 개수 가져오는 함수
 	public int nickCount(String nickname) {
 		return session.selectOne("mSQL.nickCount",nickname);

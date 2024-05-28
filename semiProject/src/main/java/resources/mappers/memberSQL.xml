@@ -4,37 +4,39 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mSQL">
 
-
-
- <select id="typeList1" parameterType="mVO" resultType="mVO">
+ <select id="typeList" parameterType="mVO" resultType="mVO">
 		SELECT
-   			product_name, product_bank, product_type, interest_type
+    		rno, product_name, product_bank, product_type, join_target
 		FROM
-    		product_info, chat_member
+    		(
+        SELECT
+            rownum rno, product_name, product_bank, product_type, join_target
+        FROM
+            product_info, chat_member
+        WHERE
+            nickname = #{nickname}
+            AND product_type = Interest_type
+    		)
 		WHERE
-    		nickname = #{nickname}
-     		AND product_type = Interest_type  
+    		rno BETWEEN #{startRno} AND #{endRno}	
 	</select>
 	
-	<select id="typeList2" parameterType="mVO" resultType="mVO">
+	<select id="selTotal" resultType="int">
 		SELECT
-   			product_name, product_bank, product_type, interest_type
+			COUNT(*)
 		FROM
-    		product_info, chat_member
-		WHERE
-    		nickname = '#{nickname}'
-     		AND product_bank = Main_bank
-	</select>
+    		(
+        SELECT
+            rownum rno, product_name, product_bank, product_type, join_target
+        FROM
+            product_info, chat_member
+        WHERE
+            nickname = #{nickname}
+            AND product_type = Interest_type
+    		)
 	
-	<select id="typeList3" parameterType="mVO" resultType="mVO">
-		SELECT
-   			 product_name, product_bank, product_type, interest_type
-		FROM
-    		product_info, chat_member
-		WHERE
-    		nickname = '#{nickname}'
-     		AND join_target = Birth
-	</select>	
+	</select>
+
 	
 	<!-- 닉네임 총 카운트 가져오기 -->
 	<select id="nickCount" resultType="int">

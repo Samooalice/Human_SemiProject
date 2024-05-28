@@ -23,6 +23,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.human.tm.dao.MemberDao;
+import com.human.tm.util.PageUtil;
 import com.human.tm.vo.MemberVO;
 
 @Controller
@@ -70,10 +71,13 @@ public class MainController {
 	        mv.setView(rv);
 	        return mv;
 	    }
-
+	    
+	    String nickname = null;
 	    HashMap<String, Object> userInfo = null;
 	    try {
 	        userInfo = getUserInfo(accessToken);
+	        nickname = (String) userInfo.get("nickname");
+	        session.setAttribute("SID", nickname);
 	    } catch (Exception e) {
 	        System.out.println("Error getting user info: " + e.getMessage());
 	        e.printStackTrace();
@@ -82,18 +86,18 @@ public class MainController {
 	        return mv;
 	    }
 
-	    String nickname = (String) userInfo.get("nickname");
 
 	    if (nickname == null) {
 	        System.out.println("Nickname is null");
 	        rv.setUrl("/tm/main.tm");
 	    } else {
-	        System.out.println("Nickname: " + nickname);
+//	        System.out.println("Nickname: " + nickname);
 
 	        int cnt = 0;
 	        
 	        try {
 	            cnt = mDao.nickCount(nickname);
+	            System.out.println("############## cnt :" + cnt);
 	        } catch (Exception e) {
 	            System.out.println("Error checking nickname count: " + e.getMessage());
 	            e.printStackTrace();
@@ -102,7 +106,6 @@ public class MainController {
 	            return mv;
 	        }
 
-	        session.setAttribute("SID", nickname);
 
 	        try {
 	            String encodedNickname = URLEncoder.encode(nickname, "UTF-8");
@@ -160,7 +163,7 @@ public class MainController {
         String accessToken = "";
         String reqUrl = "https://kauth.kakao.com/oauth/token";
         String client_id = "10f828f2b853279cbebdc8641fe75b33";
-        String redirect_uri = "http://58.72.151.124:6003/tm/loginProc.tm";
+        String redirect_uri = "http://58.72.151.124:6004/tm/loginProc.tm";
 
         try {
             URL url = new URL(reqUrl);
@@ -270,32 +273,49 @@ public class MainController {
 		return mv;
 	}
 	
+	public void editStrLength(List<MemberVO> list){
+		for(MemberVO vo : list) {
+			String pname = vo.getProduct_name();
+			int len = pname.length();
+			if(len > 45) {
+				vo.setProduct_name(pname.substring(0, 46) + "...");
+			}
+		}
+	}
+	
 	@RequestMapping("/getResult.tm")
-	public ModelAndView getResult(HttpSession session, ModelAndView mv, MemberVO mVO) {
+	public ModelAndView getResult(HttpSession session, ModelAndView mv, MemberVO mVO, PageUtil page) {
 		System.out.println("************************************** getResult");
-		
-		System.out.println(mVO.getBirth());
-		System.out.println(mVO.getInterest_type());
-		System.out.println(mVO.getMain_bank());
-
+//		
+//		System.out.println(mVO.getBirth());
+//		System.out.println(mVO.getInterest_type());
+//		System.out.println(mVO.getMain_bank());
 		String nickname = (String) session.getAttribute("SID");
-		mVO.setNickname(nickname);
-		String type = mVO.getType();		
-		List<MemberVO> list = null;
-		if(type == null) {
-			list = mDao.goodsList1(mVO);
-		} else if (type =="type") {
-			list = mDao.goodsList2(mVO);
-		} else if(type == "bank") {
-			list = mDao.goodsList3(mVO);
-		} else {
-			list = mDao.goodsList1(mVO);
+		if(nickname != null) {
+			mVO.setNickname(nickname);
 		}
 		
+		int nowPage = page.getNowPage();
+		if(nowPage == 0) {
+			nowPage = 1;
+		}
+		
+		int totalCnt = mDao.listCount(mVO);
+		
+		page.setPage(nowPage, totalCnt);
+		
+		mVO.setNowPage(page.getNowPage());
+		mVO.setStartRno(page.getStartRno());
+		mVO.setEndRno(page.getEndRno());
+
+		String type = mVO.getType();		
+		List<MemberVO> list = mDao.goodsList(mVO);
+		editStrLength(list);
 		mv.addObject("LIST", list);
 		mv.addObject("DATA", mVO);
+		mv.addObject("PAGE", page);
 		mv.setViewName("result");
-		System.out.print(mv.getViewName());
+//		System.out.print(mv.getViewName());
 		return mv;
 	}
 }
