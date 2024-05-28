@@ -59,21 +59,10 @@
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
         <h1 class="w3-xlarge">Login</h1>
         <hr class="w3-opacity">
-			<div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30">
-	            <div class="w3-col w3-padding">
-	                <label for="id" class="w3-col m4 w3-left-align w3-text-gray lbl">ID : </label>
-	                <input type="text" class="w3-col m8 w3-input w3-border"
-	                        name="id" id="id" placeholder="아이디를 입력하세요.">
-	            </div>
-
-	            <div class="w3-col w3-padding w3-margin-bottom">
-	                <label for="pw" class="w3-col m4 w3-left-align w3-text-gray lbl">PW : </label>
-	                <input type="password" class="w3-col m8 w3-input w3-border"
-	                    name="pw" id="pw" placeholder="비밀번호를 입력하세요.">
-	            </div>
+			
         
 					<p><button id="login" class="w3-button w3-block w3-green w3-round w3-margin-right">로그인</button></p>
-	        		<p><button id="join" class="w3-button w3-left w3-block w3-green w3-round">회원가입</button></p> 
+	        		
 	        </div>     
       </div>
 </c:if>
