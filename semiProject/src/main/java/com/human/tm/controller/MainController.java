@@ -266,10 +266,7 @@ public class MainController {
 	}
 	@RequestMapping("/getJsonVO.tm")
 	public ModelAndView getJsonVO(HttpSession session, ModelAndView mv, MemberVO mVO) {
-		System.out.println("************************************** getJson");
-		
 		mv.setViewName("resultToVO");
-		
 		return mv;
 	}
 	
@@ -285,11 +282,7 @@ public class MainController {
 	
 	@RequestMapping("/getResult.tm")
 	public ModelAndView getResult(HttpSession session, ModelAndView mv, MemberVO mVO, PageUtil page) {
-		System.out.println("************************************** getResult");
-//		
-//		System.out.println(mVO.getBirth());
-//		System.out.println(mVO.getInterest_type());
-//		System.out.println(mVO.getMain_bank());
+		System.out.println("############# " + mVO);
 		String nickname = (String) session.getAttribute("SID");
 		if(nickname != null) {
 			mVO.setNickname(nickname);
@@ -308,14 +301,15 @@ public class MainController {
 		mVO.setStartRno(page.getStartRno());
 		mVO.setEndRno(page.getEndRno());
 
-		String type = mVO.getType();		
+//		String type = mVO.getType();
+		
 		List<MemberVO> list = mDao.goodsList(mVO);
 		editStrLength(list);
 		mv.addObject("LIST", list);
 		mv.addObject("DATA", mVO);
 		mv.addObject("PAGE", page);
 		mv.setViewName("result");
-//		System.out.print(mv.getViewName());
+		
 		return mv;
 	}
 }

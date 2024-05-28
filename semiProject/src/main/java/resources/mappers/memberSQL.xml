@@ -9,13 +9,25 @@
     		rno, product_name, product_bank, product_type, join_target
 		FROM
     		(
-        SELECT
-            rownum rno, product_name, product_bank, product_type, join_target
-        FROM
-            product_info, chat_member
-        WHERE
-            nickname = #{nickname}
-            AND product_type = Interest_type
+		        SELECT
+		            rownum rno, product_name, product_bank, product_type, join_target
+		        FROM
+		            product_info
+		        WHERE
+<!-- 		        nickname = #{nickname}
+		            AND product_type = Interest_type
+		            AND product_bank = Main_bank
+		            AND join_target = Birth -->
+
+		           <if test="interest_type neq '성향_선택안함'"> 
+		            AND product_type = #{interest_type}
+		            </if>
+		          <if test="main_bank neq '은행_선택안함'">
+		            AND product_bank = #{main_bank}
+		           </if>
+		           <if test="birth neq '나이_선택안함'">
+		            AND join_target = #{birth}
+		           </if>
     		)
 		WHERE
     		rno BETWEEN #{startRno} AND #{endRno}	
@@ -26,13 +38,20 @@
 			COUNT(*)
 		FROM
     		(
-        SELECT
-            rownum rno, product_name, product_bank, product_type, join_target
-        FROM
-            product_info, chat_member
-        WHERE
-            nickname = #{nickname}
-            AND product_type = Interest_type
+		        SELECT
+		            rownum rno, product_name, product_bank, product_type, join_target
+		        FROM
+		            product_info
+		        WHERE
+		           <if test="interest_type neq '성향_선택안함'"> 
+		            AND product_type = #{interest_type}
+		            </if>
+		          <if test="main_bank neq '은행_선택안함'">
+		            AND product_bank = #{main_bank}
+		           </if>
+		           <if test="birth neq '나이_선택안함'">
+		            AND join_target = #{birth}
+		           </if>
     		)
 	
 	</select>
