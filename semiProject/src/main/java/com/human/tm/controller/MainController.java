@@ -274,16 +274,16 @@ public class MainController {
 		for(MemberVO vo : list) {
 			String pname = vo.getProduct_name();
 			int len = pname.length();
-			if(len > 45) {
-				vo.setProduct_name(pname.substring(0, 46) + "...");
+			if(len > 40) {
+				vo.setProduct_name(pname.substring(0, 41) + "...");
 			}
 		}
 	}
 	
 	@RequestMapping("/getResult.tm")
 	public ModelAndView getResult(HttpSession session, ModelAndView mv, MemberVO mVO, PageUtil page) {
-		System.out.println("############# " + mVO);
 		String nickname = (String) session.getAttribute("SID");
+		
 		if(nickname != null) {
 			mVO.setNickname(nickname);
 		}
@@ -294,14 +294,12 @@ public class MainController {
 		}
 		
 		int totalCnt = mDao.listCount(mVO);
-		
+	    
 		page.setPage(nowPage, totalCnt);
 		
 		mVO.setNowPage(page.getNowPage());
 		mVO.setStartRno(page.getStartRno());
 		mVO.setEndRno(page.getEndRno());
-
-//		String type = mVO.getType();
 		
 		List<MemberVO> list = mDao.goodsList(mVO);
 		editStrLength(list);

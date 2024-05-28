@@ -19,15 +19,16 @@
 		            AND product_bank = Main_bank
 		            AND join_target = Birth -->
 
-		           <if test="interest_type neq '성향_선택안함'"> 
-		            AND product_type = #{interest_type}
-		            </if>
-		          <if test="main_bank neq '은행_선택안함'">
-		            AND product_bank = #{main_bank}
-		           </if>
-		           <if test="birth neq '나이_선택안함'">
-		            AND join_target = #{birth}
-		           </if>
+		           	1=1  <!-- 항상 참인 조건으로, AND 조건을 쉽게 추가하기 위해 사용 -->
+	                <if test="interest_type != '성향_선택안함'"> 
+	                    AND product_type = #{interest_type}
+	                </if>
+	                <if test="main_bank != '은행_선택안함'">
+	                    AND product_bank = #{main_bank}
+	                </if>
+	                <if test="birth != '나이_선택안함'">
+	                    AND join_target = #{birth}
+	                </if>
     		)
 		WHERE
     		rno BETWEEN #{startRno} AND #{endRno}	
@@ -43,15 +44,16 @@
 		        FROM
 		            product_info
 		        WHERE
-		           <if test="interest_type neq '성향_선택안함'"> 
-		            AND product_type = #{interest_type}
-		            </if>
-		          <if test="main_bank neq '은행_선택안함'">
-		            AND product_bank = #{main_bank}
-		           </if>
-		           <if test="birth neq '나이_선택안함'">
-		            AND join_target = #{birth}
-		           </if>
+           			1=1  <!-- 항상 참인 조건으로, AND 조건을 쉽게 추가하기 위해 사용 -->
+	                <if test="interest_type != '성향_선택안함'"> 
+	                    AND product_type = #{interest_type}
+	                </if>
+	                <if test="main_bank != '은행_선택안함'">
+	                    AND product_bank = #{main_bank}
+	                </if>
+	                <if test="birth != '나이_선택안함'">
+	                    AND join_target = #{birth}
+	                </if>
     		)
 	
 	</select>

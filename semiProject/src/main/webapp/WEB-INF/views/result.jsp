@@ -29,8 +29,7 @@
 		$('.pageBtn').click(function(){
 			var nowPage = $(this).attr('id');
 			$('#nowPage').val(nowPage);
-			$('#frm').attr('action', 'http://58.72.151.124:6004/tm/getResult.tm');
-			
+			$('#frm').attr('action', 'http://58.72.151.124:6004/tm/getResult.tm')
 			$('#frm').submit();
 		});
 	
@@ -43,9 +42,12 @@
 <body>
 	<form method="POST" id="frm">
 		<input type="hidden" name="nowPage" id="nowPage">
+		<input type="hidden" name="birth" id="birth" value="${DATA.birth }">
+		<input type="hidden" name="main_bank" id="main_bank" value="${DATA.main_bank}">
+		<input type="hidden" name="interest_type" id="interest_type" value="${DATA.interest_type}">
 	</form>
  	<div class="w3-content mxw650">
- 		<h1 class="w3-padding w3-center w3-amber">사용자의 설문 결과를 보여드리겠습니다.</h1>
+ 		<h1 class="w3-padding w3-center w3-amber">고객님을 위한 추천상품 목록</h1>
  		
  		<div class="w3-col w3-margin-bottom">
 			<div class="w3-btn w3-small w3-green w3-ripple" id="home">처음으로</div>
