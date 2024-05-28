@@ -149,6 +149,8 @@ public class MainController {
 		int cnt = mDao.editMembInfo(mVO);
 		System.out.println(cnt);
 		
+		
+		
 		if(cnt == 1) {
 			rv.setUrl("/tm/main.tm");
 		}else {
