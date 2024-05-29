@@ -1,79 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Chart_3</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="/tm/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/tm/css/user.css">
-<script type="text/javascript" src="/tm/js/jquery-3.7.1.min.js"></script>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    .iframe-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    .iframe-wrapper {
-        text-align: center;
-        width: 50%;
-    }
-    .iframe-wrapper iframe {
-        width: 100%;
-        height: 600px;
-    }
-    @media screen and (max-width: 768px) {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .iframe-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            overflow-x: auto; /* horizontal scrollbar */
+        }
         .iframe-wrapper {
-            width: 50%;
-            margin-bottom: 20px;
+            flex: 1 1 48%; /* 각 iframe을 48% 너비로 설정 */
+            box-sizing: border-box;
         }
-    }
-    
-    @media screen and (max-width: 480px) {
         .iframe-wrapper iframe {
-        	width : 100%;
+            width: 100%;
             height: 600px;
+            border: none;
         }
-    }
-</style>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#iframe_a').click(function(){
-			var link = (this).attr('scr');
-			alert('link');
-			$('#iframe_c').attr('scr', '/tm/login.tm');
-		});
-	});
-	
-</script>
+        .iframe-wrapper p {
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .iframe-wrapper {
+                flex: 1 1 100%; /* 작은 화면에서는 각 iframe을 100% 너비로 설정 */
+            }
+        }
+    </style>
+</head>
 <body>
 
-<h2 class = 'w3-center'>정기예금 / 연금저축 상품 정보</h2>
+<h2 class="w3-center">최근 6개월 금융 상품 정보</h2>
 
 <div class="iframe-container">
     <div class="iframe-wrapper">
-        <iframe src="http://58.72.151.124:6002/tm/showChart4.tm/" id="iframe_a" scrolling="no"
-            name="iframe_a" height="600px" width="100%" title="Iframe Example"></iframe>
-        <p><a href="http://58.72.151.124:6002/tm/showChart1.tm/" target="iframe_c">확대해서 보기</a></p>
+        <iframe src="http://58.72.151.124:6002/tm/showChart4sm.tm/" id="iframe_a" scrolling="no"
+            name="iframe_a" title="Iframe Example"></iframe>
+        <p><a href="http://58.72.151.124:6002/tm/showChart4.tm/" target="iframe_c">확대해서 보기</a></p>
     </div>
     <div class="iframe-wrapper">
         <iframe src="http://58.72.151.124:6002/tm/showChart6sm.tm/" id="iframe_b" scrolling="no"
-            name="iframe_b" height="600px" width="100%" title="Iframe Example"></iframe>
-        <p><a href="http://58.72.151.124:6002/tm/showChart2.tm/" target="iframe_c">확대해서 보기</a></p>
+            name="iframe_b" title="Iframe Example"></iframe>
+        <p><a href="http://58.72.151.124:6002/tm/showChart6.tm/" target="iframe_c">확대해서 보기</a></p>
     </div>
 </div>
 
-
 <iframe src="http://58.72.151.124:6002/tm/showChart4.tm/" id="iframe_c" scrolling="no"
         name="iframe_c" height="1000px" width="100%" title="Iframe Example"></iframe>
-        
 
 <p>When the target attribute of a link matches the name of an iframe, the link will open in the iframe.</p>
 
 </body>
+</html>
 </html>
