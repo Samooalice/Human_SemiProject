@@ -46,74 +46,72 @@
 		<input type="hidden" name="main_bank" id="main_bank" value="${DATA.main_bank}">
 		<input type="hidden" name="interest_type" id="interest_type" value="${DATA.interest_type}">
 	</form>
- 	<div class="w3-content mxw650">
- 		<h1 class="w3-padding w3-center w3-amber">고객님을 위한 추천상품 목록</h1>
+ 	<div class="w3-content mxw650" style="margin-top:75px;'">
+ 		<h1 class="w3-padding w3-center w3-green">고객님을 위한 추천상품 목록</h1>
  		
  		<div class="w3-col w3-margin-bottom">
-			<div class="w3-btn w3-small w3-green w3-ripple" id="home">처음으로</div>
+			<div class="w3-btn w3-small w3-black w3-right w3-ripple" id="home"> <i class="fa fa-paper-plane"></i> 메인으로</div>
 <c:if test="${empty ISLOGIN}">
-			<div class="w3-btn w3-small w3-orange w3-ripple w3-right" id="logout">로그아웃</div>
+			<div class="w3-btn w3-small w3-black w3-ripple w3-right" style="margin-right:5px;" id="logout"><i class="fa fa-sign-out"></i> 로그아웃</div>
 </c:if>
 		</div>
  		
 
- 		
-		<div class="w3-col">
-			<div class="w3-col w3-center">
-				<div class="inblock w3-left pdr5" style="width: 100px;"><div class="w3-blue-gray">상품번호</div></div>
-				<div class="inblock w3-right" style="width: 100px;"><div class="w3-blue-gray">주거래은행</div></div>
-				<div class="inblock w3-right pdr5" style="width: 100px;"><div class="w3-blue-gray">상품종류</div></div>
-				<div class="inblock w3-right pdr5" style="width: 100px;"><div class="w3-blue-gray">대상연령</div></div>
-				<div class="w3-rest pdr5"><div class="w3-blue-gray">상품이름</div></div>
-			</div>
+		
+		<div class="w3-col w3-center">
 <c:if test="${not empty LIST}">
 	<c:forEach var="DATA" items="${LIST}">
+		<div class="inblock w3-margin-bottom" style="width:310px; height:300px;">
 			<div class="w3-col">
-				<div class="inblock w3-left pdr5" style="width: 100px;"><div class="w3-center">${DATA.rno}</div></div>
-				<div class="inblock w3-right" style="width: 100px;"><div class="w3-center">${DATA.product_bank}</div></div>
-				<div class="inblock w3-right pdr5" style="width: 100px;"><div class="w3-center">${DATA.product_type}</div></div>
-				<div class="inblock w3-right pdr5" style="width: 100px;"><div class="w3-center">${DATA.join_target}</div></div>
-				<div class="w3-rest pdr5">
-					<div class="title">${DATA.product_name}</div>
-				</div>
+			  	<ul class="w3-border w3-center w3-hover-shadow" style="width:310px; height:300px;list-style-type: none; padding-left: 0px;">
+			    	<li class="w3-xlarge w3-padding-32 ${DATA.w3color}">${DATA.product_bank}</li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">상품 종류 : </b><div class="w3-col m6 w3-center">${DATA.product_type}</div></li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">대상 연령 : </b><div class="w3-col m6 w3-center"> ${DATA.join_target}</li>
+			    	<li class="w3-padding-16 pdh20 w3-padding">
+			      		<h2 class="w3-wide w3-padding" style="font-size: 15px;"><b>${DATA.product_name}</b></h2>
+			    	</li>
+				</ul>
+					
+    			
 			</div>
-	
+</div>
 	</c:forEach>
+		</div>
 	
 	</c:if> 
 <c:if test="${empty LIST}">
 			<div class="w3-col w3-border-bottom w3-margin-top">
-				<h3 class="w3-center w3-text-gray">* 아직 작성된 글이 없습니다. *</h3>
+				<h3 class="w3-center w3-text-gray">* 아직 조건에 맞는 상품이 없습니다. *</h3>
 			</div>
 </c:if>
 		</div>
  		
 		 			
-				<div class="w3-col w3-center w3-margin-top">
-					<div class="w3-bar w3-border w3-border w3-border-blue w3-round">
+				<div class="w3-col w3-center" style="margin-top:50px;">
+					<div class="w3-bar w3-border w3-border w3-border-green w3-round">
 		<c:if test="${PAGE.startPage eq 1}">
-						<span class="w3-bar-item w3-pale-blue">&laquo;</span>
+						<span class="w3-bar-item w3-pale-green">&laquo;</span>
 		</c:if>
 		<c:if test="${PAGE.startPage ne 1}">
-						<span class="w3-bar-item w3-btn w3-hover-blue pageBtn" 
+						<span class="w3-bar-item w3-btn w3-hover-gray pageBtn" 
 															id="${PAGE.startPage - 1}">&laquo;</span>
 		</c:if>
 		<c:forEach var="pno" begin="${PAGE.startPage}" end="${PAGE.endPage}">
 			<c:if test="${PAGE.nowPage eq pno}">
-						<span class="w3-bar-item w3-btn w3-pink w3-hover-blue pageBtn" 
+						<span class="w3-bar-item w3-btn w3-green w3-hover-gray pageBtn" 
 																		id="${pno}">${pno}</span>
 			</c:if>
 			<c:if test="${PAGE.nowPage ne pno}">
-						<span class="w3-bar-item w3-btn w3-hover-blue pageBtn" 
+						<span class="w3-bar-item w3-btn w3-hover-gray pageBtn" 
 																		id="${pno}">${pno}</span>
 			</c:if>
 		</c:forEach>
 		<c:if test="${PAGE.endPage ne PAGE.totalPage}">
-						<span class="w3-bar-item w3-btn w3-hover-blue pageBtn" 
+						<span class="w3-bar-item w3-btn w3-hover-gray pageBtn" 
 															id="${PAGE.endPage + 1}">&raquo;</span>
 		</c:if>
 		<c:if test="${PAGE.endPage eq PAGE.totalPage}">
-						<span class="w3-bar-item w3-pale-blue">&raquo;</span>
+						<span class="w3-bar-item w3-pale-green">&raquo;</span>
 		</c:if>
 					</div>
 				</div>

@@ -36,11 +36,10 @@
 
 </head>
 <body>
-<div class="w3-content mxw650">
-<!-- Contact Section -->
-<div class="w3-light-grey" style="padding:175px">
-  <h3 class="w3-center w3-bold">회원정보 수정</h3>
-  <p class="w3-center w3-large">수정할 회원정보를 입력해 주세요:</p>
+<div class="w3-content mxw800">
+  <h1 class="w3-bold w3-card-4 w3-green w3-padding w3-margin-bottom" style="margin-top: 80px; font-size: 24pt;"><i class="fa fa-pencil"></i> 회원정보 수정</h1>
+<div class="w3-light-grey w3-card-4" style="padding:30px; margin-top: 10px;">
+  <p class="w3-center w3-large w3-left w3-margin-bottom" style="font-size: 50pt;"><b>수정할 회원정보를 입력해 주세요.</b></p>
   <div style="margin-top:48px">
    
     <form action="/tm/editProc.tm" method="POST" id="frm">

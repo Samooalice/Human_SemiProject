@@ -59,13 +59,12 @@ public class MainController {
 
 	@RequestMapping("/loginProc.tm")
 	public ModelAndView loginProc(@RequestParam String code, ModelAndView mv, HttpSession session, MemberVO mVO, RedirectView rv) {
-	    System.out.println("************************************** loginProc in");
+	
 
 	    String accessToken = null;
 	    try {
 	        accessToken = getAccessToken(code);
 	    } catch (Exception e) {
-	        System.out.println("Error getting access token: " + e.getMessage());
 	        e.printStackTrace();
 	        rv.setUrl("/tm/main.tm");
 	        mv.setView(rv);
@@ -79,7 +78,6 @@ public class MainController {
 	        nickname = (String) userInfo.get("nickname");
 	        session.setAttribute("SID", nickname);
 	    } catch (Exception e) {
-	        System.out.println("Error getting user info: " + e.getMessage());
 	        e.printStackTrace();
 	        rv.setUrl("/tm/main.tm");
 	        mv.setView(rv);
@@ -129,7 +127,6 @@ public class MainController {
 	
 	@RequestMapping("/joinProc.tm")
 	public ModelAndView joinProc(ModelAndView mv, RedirectView rv, MemberVO mVO) {
-		System.out.println("************************************** joinProc in");
 		int cnt = mDao.addMemb(mVO);
 		
 		if(cnt == 1) {
@@ -144,10 +141,7 @@ public class MainController {
 	
 	@RequestMapping("/editProc.tm")
 	public ModelAndView editProc(MemberVO mVO, RedirectView rv, ModelAndView mv) {
-		System.out.println("************************************** editProc in");
-		System.out.println(mVO);
 		int cnt = mDao.editMembInfo(mVO);
-		System.out.println(cnt);
 		
 		
 		
@@ -258,7 +252,6 @@ public class MainController {
 	
 	@RequestMapping("/logoutProc.tm")
 	public ModelAndView logoutProc(HttpSession session, ModelAndView mv) {
-		System.out.println("************************************** logout");
 		
 		String sid = (String) session.getAttribute("SID");
 		session.removeAttribute("SID");
@@ -266,21 +259,15 @@ public class MainController {
 		
 		return mv;
 	}
+	
+
 	@RequestMapping("/getJsonVO.tm")
 	public ModelAndView getJsonVO(HttpSession session, ModelAndView mv, MemberVO mVO) {
 		mv.setViewName("resultToVO");
 		return mv;
 	}
 	
-	public void editStrLength(List<MemberVO> list){
-		for(MemberVO vo : list) {
-			String pname = vo.getProduct_name();
-			int len = pname.length();
-			if(len > 40) {
-				vo.setProduct_name(pname.substring(0, 41) + "...");
-			}
-		}
-	}
+	
 	
 	@RequestMapping("/getResult.tm")
 	public ModelAndView getResult(HttpSession session, ModelAndView mv, MemberVO mVO, PageUtil page) {
@@ -304,7 +291,7 @@ public class MainController {
 		mVO.setEndRno(page.getEndRno());
 		
 		List<MemberVO> list = mDao.goodsList(mVO);
-		editStrLength(list);
+	
 		mv.addObject("LIST", list);
 		mv.addObject("DATA", mVO);
 		mv.addObject("PAGE", page);

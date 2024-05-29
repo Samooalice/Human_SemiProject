@@ -1,11 +1,33 @@
 package com.human.tm.vo;
 
 import java.sql.Clob;
+import java.util.HashMap;
 
 public class MemberVO {
 	private int product_no, mno, rno, nowPage, startRno, endRno, total;
-	private String nickname, period_day, birth, gen, main_bank, interest_type, product_type, product_bank, product_name, isshow, join_target, type;
+	private String nickname, period_day, birth, gen, main_bank, interest_type, product_type, product_bank, product_name, isshow, join_target, type, w3color;
 	private Clob product_file;
+	public void colorClass() {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("KB국민은행", "w3-khaki");
+		map.put("하나은행", "w3-light-green");
+		map.put("신한은행", "w3-light-blue");
+		map.put("우리은행", "w3-pale-red");
+		
+		String tmp = map.get(product_bank);
+		if(tmp == null) {
+			w3color = "w3-light-gray";
+		} else {
+			w3color = tmp;
+		}
+		
+	}
+	public String getW3color() {
+		return w3color;
+	}
+	public void setW3color(String w3color) {
+		this.w3color = w3color;
+	}
 	public int getProduct_no() {
 		return product_no;
 	}
@@ -95,6 +117,7 @@ public class MemberVO {
 	}
 	public void setProduct_bank(String product_bank) {
 		this.product_bank = product_bank;
+		colorClass();
 	}
 	public String getProduct_name() {
 		return product_name;
