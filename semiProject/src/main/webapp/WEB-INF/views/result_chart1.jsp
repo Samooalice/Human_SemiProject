@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +14,7 @@
             gap: 20px;
             justify-content: space-between;
             overflow-x: auto; /* horizontal scrollbar */
+            width: 100%; /* adjust the width */
         }
         .iframe-wrapper {
             flex: 1 1 48%; /* 각 iframe을 48% 너비로 설정 */
@@ -59,5 +58,4 @@
 <p>When the target attribute of a link matches the name of an iframe, the link will open in the iframe.</p>
 
 </body>
-</html>
 </html>
