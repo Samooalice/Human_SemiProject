@@ -39,14 +39,14 @@
 <div class="w3-content mxw650">
 <!-- Contact Section -->
 <div class="w3-light-grey" style="padding:175px">
-  <h3 class="w3-center">회원정보 수정</h3>
+  <h3 class="w3-center w3-bold">회원정보 수정</h3>
   <p class="w3-center w3-large">수정할 회원정보를 입력해 주세요:</p>
   <div style="margin-top:48px">
    
     <form action="/tm/editProc.tm" method="POST" id="frm">
  
  	<label for="nickname" class="w3-col mgb20">당신의 닉네임은 무엇입니까? : </label>
-	<input class="w3-padding w3-border w3-border-green" style="width:150%;"
+	<input class="w3-padding w3-border w3-border-green" style="width:100%;"
 		 type="text" name="nickname" value="${SID}" id="nickname" readonly/>
  
    	 <label for="period_day" class="w3-col w3-select">희망하는 예치기간은 몇 개월입니까? : </label>
