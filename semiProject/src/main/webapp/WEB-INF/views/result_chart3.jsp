@@ -3,17 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iframe Example</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="/tm/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/tm/css/user.css">
-<script type="text/javascript" src="/tm/js/jquery-3.7.1.min.js"></script>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Example</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,6 +15,7 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: space-between;
+            overflow-x: auto; /* horizontal scrollbar */
         }
         .iframe-wrapper {
             flex: 1 1 48%; /* 각 iframe을 48% 너비로 설정 */
@@ -41,19 +34,11 @@
                 flex: 1 1 100%; /* 작은 화면에서는 각 iframe을 100% 너비로 설정 */
             }
         }
-        /* .centered-title {
-            text-align: center;
-            background-color: red;
-            padding: 16px;
-            margin: 0 0 20px 0; /* 여백을 추가하여 제목과 차트 사이에 간격을 둠 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
-            color: white; /* 텍스트 색상 설정 */
-        } */
     </style>
 </head>
 <body>
 
-<h2 class="centered-title w3-padding" style=" text-align: center;">적금 금리유형 별 평균 저축금리</h2>
+<h2 class="w3-center">최근 6개월 금융 상품 정보</h2>
 
 <div class="iframe-container">
     <div class="iframe-wrapper">
@@ -74,4 +59,5 @@
 <p>When the target attribute of a link matches the name of an iframe, the link will open in the iframe.</p>
 
 </body>
+</html>
 </html>
