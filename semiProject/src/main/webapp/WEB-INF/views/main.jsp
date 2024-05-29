@@ -18,11 +18,16 @@
 	body {font-size: 16px;}
 	img {margin-bottom: -8px;}
 	.mySlides {display: none;}
+
 </style>
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#login').click(function(){
+		$('#login1').click(function(){
+			$(location).attr('href', '/tm/login.tm');
+		});
+		
+		$('#login2').click(function(){
 			$(location).attr('href', '/tm/login.tm');
 		});
 		
@@ -30,11 +35,18 @@
 			$(location).attr('href', '/tm/logoutProc.tm');
 		});
 		
-		$('#edit').click(function(){
+		$('#edit1').click(function(){
+			$(location).attr('href','/tm/edit.tm');
+		});
+		
+		$('#edit2').click(function(){
 			$(location).attr('href','/tm/edit.tm');
 		});
 
-		$('#chat').click(function(){
+		$('#chat1').click(function(){
+			$(location).attr('href', 'http://pf.kakao.com/_xbwxixcG/chat');
+		});
+		$('#chat2').click(function(){
 			$(location).attr('href', 'http://pf.kakao.com/_xbwxixcG/chat');
 		});
 		
@@ -52,9 +64,19 @@
 
 <!-- Header with Slideshow -->
 <header class="w3-display-container w3-center">
-  <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download </button>
+
+<c:if test="${empty SID}">
+  <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" id="login2" style="min-width:375px" >로그인 </button>
+ </c:if>
+ 
+<c:if test="${not empty SID}">
+	<div class="w3-block w3-hide-large w3-hide-medium">
+	 	<button class="w3-col s6 w3-button w3-green" id="chat2" >채팅시작 </button>
+	 	<button class="w3-col s6 w3-button w3-lime" id="edit2" >정보수정 </button>
+ 	</div>
+ </c:if> 
   <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="/tm/image/mainview/main8.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
+    <img class="w3-image" src="/tm/image/mainview/main8.jpg" alt="Image 1" style="min-width:375px" width="1500" height="1000">
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
     
 <c:if test="${empty SID}">
@@ -63,7 +85,7 @@
         <hr class="w3-opacity">
 			
         
-					<p><button id="login" class="w3-button w3-block w3-green w3-round w3-margin-right">로그인</button></p>
+					<p><button id="login1" class="w3-button w3-block w3-green w3-round w3-margin-right">로그인</button></p>
 	        		
 	        </div>     
       </div>
@@ -74,8 +96,8 @@
 	      <h1 class="w3-xlarge">[ ${SID} ]님 환영합니다!</h1>
 	      <hr class="w3-opacity">
 	      <div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30">
-	      	<div><button id="chat" class="w3-button w3-block w3-green w3-round w3-margin-bottom">채팅시작</button></div>
-	      	<div><button id="edit" class="w3-button w3-block w3-green w3-round w3-margin-bottom">정보수정</button></div>
+	      	<div><button id="chat1" class="w3-button w3-block w3-green w3-round w3-margin-bottom">채팅시작</button></div>
+	      	<div><button id="edit1" class="w3-button w3-block w3-green w3-round w3-margin-bottom">정보수정</button></div>
 	      	<div><button id="logout" class="w3-button w3-block w3-green w3-round">로그아웃</button></div> 
 	      </div>      
       </div>
@@ -87,49 +109,49 @@
 </header>
 
 <!-- 대체뭐니 설명 섹션 -->
-<div class="w3-padding-64 w3-light-gray">
+<div class="w3-padding-64 w3-light-gray" style="min-width:375px">
   <div class="w3-row-padding">
     <div class="w3-col l8 m6">
       <h1 class="w3-jumbo" style="color: #555;"><b>That's Money</b></h1>
       <h1 class="w3-xxxlarge w3-text-green"><b>대체 뭐니?</b></h1>
       <span class="w3-xlarge" >현대인의 든든한 자산관리 친구! 대체 뭐니?(That's Money!)</span>
-      <p class="pt9">현대 사회에서 자산 관리는 더 이상 선택이 아닌 필수입니다. 
-		하지만 바쁜 일상 속에서 최신 금융 소식을 따라잡고, 이를 바탕으로 
-		자산 관리를 체계적으로 하는 것은 결코 쉬운 일이 아닙니다. 
+      <p class="pt9">현대 사회에서 자산 관리는 더 이상 선택이 아닌 필수입니다. <br>
+		하지만 바쁜 일상 속에서 최신 금융 소식을 따라잡고, 이를 바탕으로 <br>
+		자산 관리를 체계적으로 하는 것은 결코 쉬운 일이 아닙니다. <br>
 		그래서 대체 뭐니?(That's Money!)는 여러분의 자산 관리를 돕기 위해 
 		키워드 기반 금융상품 소개 서비스를 제공합니다.
       </p>
       <span class="w3-xlarge">대체 뭐니?(That's Money!)란?</span>
-      <p class="pt9">대체 뭐니?(That's Money!)는 최신 금융 상품을 손쉽게 얻고 활용할 수 있도록 설계되었습니다. 
+      <div class="pt9">대체 뭐니?(That's Money!)는 최신 금융 상품을 손쉽게 얻고 활용할 수 있도록 설계되었습니다.<br> 
 		 대체 뭐니?(That's Money!)봇과의 키워드 중심 대화를 통해 여러분의 투자성향과 최신 트렌드를 융합하여
-		 바쁜 현대인들도 손쉽게 자산을 관리할 수 있습니다.</p>
+		 바쁜 현대인들도 손쉽게 자산을 관리할 수 있습니다.</div>
 		
 	  <span class="w3-xlarge w3-text-green">[주요기능]</span>
-		<p>* 맞춤형 금융상품 제공</p>
-		<pre class="pt9">- 사용자가 설정한 키워드를 기반으로 최신 예/적금 상품을 큐레이션하여 제공
-- 관심분야에 따른 투자 Tip등을 간단하게 확인</pre>
+		<div>* 맞춤형 금융상품 제공</div><br>
+		<div class="pt9">- 사용자가 설정한 키워드를 기반으로 최신 예/적금 상품을 큐레이션하여 제공<br><br>
+- 관심분야에 따른 투자 Tip등을 간단하게 확인</div>
 		
-		<p>* 실시간 업데이트</p>
-		<pre class="pt9">- 실시간으로 업데이트 되는 금융 소식을 통해 빠른 시장변동에 대응
-- 중요 소식은 알림으로 즉시 전달받고, 중요정보를 놓치지 않도록 지원</pre>
+		<div>* 실시간 업데이트</div>
+		<div class="pt9">- 실시간으로 업데이트 되는 금융 소식을 통해 빠른 시장변동에 대응<br>
+- 중요 소식은 알림으로 즉시 전달받고, 중요정보를 놓치지 않도록 지원</div>
 		
-		<p>* 사용 친화적 인터페이스</p>
-		<p>- 직관적이고 사용하기 쉬운 인터페이스로 누구나 쉽게 접근 가능</p>
+		<div>* 사용 친화적 인터페이스</div>
+		<div>- 직관적이고 사용하기 쉬운 인터페이스로 누구나 쉽게 접근 가능</div>
 		
 		<span class="w3-xlarge w3-text-green">[이용방법]</span>
-		<p>Step 1. 가입키워드 설정</p>
-		<p class="pt9">- 연령층, 관심상품, 주거래은행 등 사용자 직접 선택</p>
+		<div>Step 1. 가입키워드 설정</div>
+		<div class="pt9">- 연령층, 관심상품, 주거래은행 등 사용자 직접 선택</div>
 		
-		<p>Step 2. 예/적금 상품 수신</p>
-		<p class="pt9">- 전체 금융권 출시 예/적금 상품 검색 및 분석</p>
+		<div>Step 2. 예/적금 상품 수신</div>
+		<div class="pt9">- 전체 금융권 출시 예/적금 상품 검색 및 분석</div>
 		
-		<p>Step 3. 사용자 맞춤 예/적금 상품 추천</p>
-		<p class="pt9">- 시중에 접수중인 예/적금 상품 제공</p>
+		<div>Step 3. 사용자 맞춤 예/적금 상품 추천</div>
+		<div class="pt9">- 시중에 접수중인 예/적금 상품 제공</div>
 		
 		<span class="w3-xlarge w3-text-green">[대체뭐니?(That's Money!)의 이점]</span>
-		<pre class="pt9">시간 절약: 바쁜 일상 속에서 최신 금융 정보를 쉽게 얻어 시간과 노력을 절약
-지식 확장: 다양한 전문가의 분석과 조언을 통해 금융지식 확장
-투자 효율성: 맞춤형 정보를 바탕으로, 보다 효율적인 자산관리와 투자 가능</pre>
+		<div class="pt9">-바쁜 일상 속에서 최신 금융 정보를 쉽게 얻어 시간과 노력을 절약<br>
+						 -다양한 전문가의 분석과 조언을 통해 금융지식 확장<br>
+						 -맞춤형 정보를 바탕으로, 보다 효율적인 자산관리와 투자 가능</div>
 		
     </div>
     <div class="w3-col l4 m6">
@@ -158,6 +180,31 @@
     </div>
   </div>
 </div>
+
+
+<script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>
 
 
 <script>
