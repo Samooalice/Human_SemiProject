@@ -16,10 +16,28 @@
     .iframe-container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
     .iframe-wrapper {
         text-align: center;
         width: 50%;
+    }
+    .iframe-wrapper iframe {
+        width: 100%;
+        height: 600px;
+    }
+    @media screen and (max-width: 768px) {
+        .iframe-wrapper {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .iframe-wrapper iframe {
+        	width : 100%;
+            height: 600px;
+        }
     }
 </style>
 

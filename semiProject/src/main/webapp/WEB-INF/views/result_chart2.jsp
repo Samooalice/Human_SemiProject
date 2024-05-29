@@ -16,10 +16,28 @@
     .iframe-container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
     .iframe-wrapper {
         text-align: center;
         width: 50%;
+    }
+    .iframe-wrapper iframe {
+        width: 100%;
+        height: 600px;
+    }
+    @media screen and (max-width: 768px) {
+        .iframe-wrapper {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .iframe-wrapper iframe {
+        	width : 100%;
+            height: 600px;
+        }
     }
 </style>
 
@@ -39,16 +57,17 @@
 
 <div class="iframe-container">
     <div class="iframe-wrapper">
-        <iframe src="http://58.72.151.124:6002/tm/showChart3sm.tm/" id="iframe_a" scrolling="no"
+        <iframe src="http://58.72.151.124:6002/tm/showChart3.tm/" id="iframe_a" scrolling="no"
             name="iframe_a" height="600px" width="100%" title="Iframe Example"></iframe>
-        <p><a href="http://58.72.151.124:6002/tm/showChart3.tm/" target="iframe_c">확대해서 보기</a></p>
+        <p><a href="http://58.72.151.124:6002/tm/showChart1.tm/" target="iframe_c">확대해서 보기</a></p>
     </div>
-    <div class="iframe-wrapper"> 
+    <div class="iframe-wrapper">
         <iframe src="http://58.72.151.124:6002/tm/showChart5sm.tm/" id="iframe_b" scrolling="no"
             name="iframe_b" height="600px" width="100%" title="Iframe Example"></iframe>
-        <p><a href="http://58.72.151.124:6002/tm/showChart5.tm/" target="iframe_c">확대해서 보기</a></p>
+        <p><a href="http://58.72.151.124:6002/tm/showChart2.tm/" target="iframe_c">확대해서 보기</a></p>
     </div>
 </div>
+
 
 <iframe src="http://58.72.151.124:6002/tm/showChart3.tm/" id="iframe_c" scrolling="no"
         name="iframe_c" height="1000px" width="100%" title="Iframe Example"></iframe>
