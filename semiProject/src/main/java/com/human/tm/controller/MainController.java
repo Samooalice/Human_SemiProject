@@ -42,10 +42,6 @@ public class MainController {
 		return "redirect";
 	}
 	
-//	@RequestMapping("/result.tm")
-//	public String getResult() {
-//		return "result";
-//	}
 	
 	@RequestMapping("/join.tm")
 	public String getJoin() {
@@ -95,7 +91,7 @@ public class MainController {
 	        
 	        try {
 	            cnt = mDao.nickCount(nickname);
-	            System.out.println("############## cnt :" + cnt);
+	          
 	        } catch (Exception e) {
 	            System.out.println("Error checking nickname count: " + e.getMessage());
 	            e.printStackTrace();
