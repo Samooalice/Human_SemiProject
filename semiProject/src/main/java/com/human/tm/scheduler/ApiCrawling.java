@@ -16,7 +16,7 @@ public class ApiCrawling {
         String url = "http://localhost:8000/apicrawl/";
         try {
             String response = restTemplate.getForObject(url, String.class);
-            System.out.println("Django 서버에 요청을 보냅니다 : " + response);
+            System.out.println("Django 서버에 요청을 보냅니다. : " + response);
         } catch (Exception e) {
             System.err.println("문제가 발생했습니다 : " + e.getMessage());
         }
