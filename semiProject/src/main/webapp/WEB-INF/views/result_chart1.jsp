@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<<<<<<< HEAD
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -52,47 +51,6 @@
         } */
     </style>
 </head>
-=======
-<style>
-    .iframe-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    .iframe-wrapper {
-        text-align: center;
-        width: 50%;
-    }
-    .iframe-wrapper iframe {
-        width: 100%;
-        height: 600px;
-    }
-    @media screen and (max-width: 768px) {
-        .iframe-wrapper {
-            width: 50%;
-            margin-bottom: 20px;
-        }
-    }
-    
-    @media screen and (max-width: 480px) {
-        .iframe-wrapper iframe {
-        	width : 100%;
-            height: 600px;
-        }
-    }
-</style>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#iframe_a').click(function(){
-			var link = (this).attr('scr');
-			alert('link');
-			$('#iframe_c').attr('scr', '/tm/login.tm');
-		});
-	});
-	
-</script>
->>>>>>> branch 'working' of https://github.com/Samooalice/Human_SemiProject.git
 <body>
 
 <h2 class="centered-title w3-padding" style=" text-align: center;">적금 금리유형 별 평균 저축금리</h2>
