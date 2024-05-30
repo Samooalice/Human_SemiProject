@@ -74,6 +74,10 @@
     </style>
     <script type="text/javascript">
         $(document).ready(function() {
+        	$('#home').click(function(){
+                $(location).attr('href', '/tm/main.tm');
+             });
+        	
             $('#chart1').click(function() {
                 $('#fullchart iframe').attr('src', 'http://58.72.151.124:6002/tm/showChart1.tm/');
                 $('#fullchart').show();
@@ -94,6 +98,12 @@
 <body>
 
 <h2 class="w3-center">최근 6개월 금융 상품 정보</h2>
+
+<div class="w3-col w3-margin-bottom w3-margin-right">
+    <div class="w3-btn w3-small w3-black w3-right w3-ripple extra-right-margin" id="home"> 
+        <i class="fa fa-paper-plane"></i> 메인으로
+    </div>
+</div>
 
 <div class="iframe-container">
     <div class="iframe-wrapper">
