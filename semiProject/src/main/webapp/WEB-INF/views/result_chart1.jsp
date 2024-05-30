@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/tm/css/w3.css">
     <link rel="stylesheet" type="text/css" href="/tm/css/user.css">
     <script type="text/javascript" src="/tm/js/jquery-3.7.1.min.js"></script>
-    <title>Chart1</title>
+    <title>6개월간의 금융상품 동향</title>
     <style>
         body {
             font-family: Arial, sans-serif;

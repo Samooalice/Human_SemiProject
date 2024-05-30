@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>EditView</title>
+<title>회원정보 수정</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/tm/css/w3.css">

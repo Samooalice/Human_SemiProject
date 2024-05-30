@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/tm/css/w3.css">
     <link rel="stylesheet" type="text/css" href="/tm/css/user.css">
     <script type="text/javascript" src="/tm/js/jquery-3.7.1.min.js"></script>
-    <title>Chart3</title>
+    <title>연금저축 및 정기예금 차트</title>
     <style>
         body {
             font-family: Arial, sans-serif;
