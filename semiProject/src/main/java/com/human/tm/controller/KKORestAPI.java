@@ -23,7 +23,7 @@ public class KKORestAPI {
 	public ModelAndView kakaoLogin() {
 		System.out.println("*********************************** login in");
 		String client_id = "10f828f2b853279cbebdc8641fe75b33";
-		String redirect_url = "http://58.72.151.124:6004/tm/loginProc.tm";
+		String redirect_url = "http://58.72.151.124:6003/tm/loginProc.tm";
 		
 		String login_url = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="+client_id+"&redirect_uri="+redirect_url;
 		

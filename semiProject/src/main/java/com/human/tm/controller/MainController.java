@@ -155,7 +155,7 @@ public class MainController {
         String accessToken = "";
         String reqUrl = "https://kauth.kakao.com/oauth/token";
         String client_id = "10f828f2b853279cbebdc8641fe75b33";
-        String redirect_uri = "http://58.72.151.124:6004/tm/loginProc.tm";
+        String redirect_uri = "http://58.72.151.124:6003/tm/loginProc.tm";
 
         try {
             URL url = new URL(reqUrl);
