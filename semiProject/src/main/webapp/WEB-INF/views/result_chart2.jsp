@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/tm/css/w3.css">
-	<link rel="stylesheet" type="text/css" href="/tm/css/user.css">
-	<script type="text/javascript" src="/tm/js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/tm/css/user.css">
+    <script type="text/javascript" src="/tm/js/jquery-3.7.1.min.js"></script>
     <title>Chart2</title>
     <style>
         body {
@@ -25,11 +25,16 @@
             flex: 1 1 48%; /* 각 iframe을 48% 너비로 설정 */
             box-sizing: border-box;
             position: relative; /* 상대 위치 지정 */
+            text-align: center; /* 중앙 정렬 */
         }
         .iframe-wrapper iframe {
             width: 100%;
             height: 600px;
             border: none;
+        }
+        .iframe-wrapper .w3-btn {
+            display: inline-block; /* 중앙 정렬을 위한 인라인 블록 */
+            margin-top: 10px;
         }
         @media (max-width: 768px) {
             .iframe-wrapper {
@@ -92,14 +97,14 @@
 
 <div class="iframe-container">
     <div class="iframe-wrapper">
-        <iframe src="http://58.72.151.124:6002/tm/showChart3.tm/" id="iframe_a" scrolling="no"
+        <iframe src="http://58.72.151.124:6002/tm/showChart3sm.tm/" id="iframe_a" scrolling="no"
             name="iframe_a" title="Iframe Example"></iframe>
-        <div class="w3-btn w3-blue w3-center" id="chart3">확대해서 보기</div>
+        <div class="w3-btn w3-blue" id="chart3">확대해서 보기</div>
     </div>
     <div class="iframe-wrapper">
         <iframe src="http://58.72.151.124:6002/tm/showChart5sm.tm/" id="iframe_b" scrolling="no"
             name="iframe_b" title="Iframe Example"></iframe>
-        <div class="w3-btn w3-blue w3-center" id="chart5">확대해서 보기</div>
+        <div class="w3-btn w3-blue" id="chart5">확대해서 보기</div>
     </div>
 </div>
 
