@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class MemberVO {
 	private int product_no, mno, rno, nowPage, startRno, endRno, total;
 	private String nickname, period_day, birth, gen, main_bank, interest_type, product_type, product_bank, product_name, isshow, join_target, type, w3color;
-	private Clob product_file;
+	private String product_file;
 	public void colorClass() {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("KB국민은행", "w3-khaki");
@@ -143,10 +143,10 @@ public class MemberVO {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public Clob getProduct_file() {
+	public String getProduct_file() {
 		return product_file;
 	}
-	public void setProduct_file(Clob product_file) {
+	public void setProduct_file(String product_file) {
 		this.product_file = product_file;
 	}
 	@Override

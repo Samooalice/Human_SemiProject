@@ -6,11 +6,11 @@
 
  <select id="typeList" parameterType="mVO" resultType="mVO">
 		SELECT
-    		rno, product_name, product_bank, product_type, join_target
+    		rno, product_name, product_bank, product_type, join_target, product_no
 		FROM
     		(
 		        SELECT
-		            rownum rno, product_name, product_bank, product_type, join_target
+		            rownum rno, product_name, product_bank, product_type, join_target, product_no
 		        FROM
 		            product_info
 		        WHERE
@@ -58,7 +58,14 @@
 	
 	</select>
 
-	
+	<select id="prodDetail" resultType="mVO" parameterType="mVO">
+		SELECT
+			product_no, product_name, product_bank, product_file, product_type, join_target
+		FROM
+			product_info
+		WHERE
+			product_no = #{product_no}
+	</select>
 	<!-- 닉네임 총 카운트 가져오기 -->
 	<select id="nickCount" resultType="int">
 		SELECT

@@ -23,17 +23,41 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#home').click(function(){
-			$(location).attr('href', 'http://58.72.151.124:6004/tm/');
+			$(location).attr('href', '/tm/main.tm');
+		});
+		$('#logout').click(function(){
+			$(location).attr('href', '/tm/logoutProc.tm');
 		});
 		
 		$('.pageBtn').click(function(){
 			var nowPage = $(this).attr('id');
 			$('#nowPage').val(nowPage);
-			$('#frm').attr('action', 'http://58.72.151.124:6004/tm/getResult.tm')
+			$('#frm').attr('action', '/tm/getResult.tm')
 			$('#frm').submit();
 		});
 	
-
+	 $('.prod_btn').click(function(){
+			$('.mddata').html('');
+			var sid = $(this).attr('id').substring(1);
+			$.ajax({
+				url : "/tm/resultDetail.tm",
+				type : 'POST',
+				dataType : 'json',
+				data : {
+					product_no: sid
+				}, 
+				success : function(resp){
+					$('#prod_no').html(resp['product_no']);
+					$('#prod_name').html(resp['product_name']);
+					$('#prod_bank').html(resp['product_bank']);
+					$('#prod_target').html(resp['join_target']);
+					$('#prod_type').html(resp['product_type']);
+					$('#prod_file').html(resp['product_file']);
+					
+					$('#modal').css('display', 'block');
+				}
+			});
+	 	});
 	});
 </script>
 
@@ -45,13 +69,14 @@
 		<input type="hidden" name="birth" id="birth" value="${DATA.birth }">
 		<input type="hidden" name="main_bank" id="main_bank" value="${DATA.main_bank}">
 		<input type="hidden" name="interest_type" id="interest_type" value="${DATA.interest_type}">
+		<input type="hidden" name="nick" value="${ISLOGIN}">
 	</form>
  	<div class="w3-content mxw650" style="margin-top:75px;'">
  		<h1 class="w3-padding w3-center w3-green">고객님을 위한 추천상품 목록</h1>
  		
  		<div class="w3-col w3-margin-bottom">
 			<div class="w3-btn w3-small w3-black w3-right w3-ripple" id="home"> <i class="fa fa-paper-plane"></i> 메인으로</div>
-<c:if test="${empty ISLOGIN}">
+<c:if test="${not empty ISLOGIN}">
 			<div class="w3-btn w3-small w3-black w3-ripple w3-right" style="margin-right:5px;" id="logout"><i class="fa fa-sign-out"></i> 로그아웃</div>
 </c:if>
 		</div>
@@ -61,15 +86,17 @@
 		<div class="w3-col w3-center">
 <c:if test="${not empty LIST}">
 	<c:forEach var="DATA" items="${LIST}">
-		<div class="inblock w3-margin-bottom" style="width:310px; height:300px;">
+		<div class="inblock w3-margin-bottom" style="width:310px; height:380px;">
 			<div class="w3-col">
-			  	<ul class="w3-border w3-center w3-hover-shadow" style="width:310px; height:300px;list-style-type: none; padding-left: 0px;">
+			  	<ul class="w3-border w3-center w3-hover-shadow w3-display-container" style="width:310px; height:380px;list-style-type: none; padding-left: 0px;">
 			    	<li class="w3-xlarge w3-padding-32 ${DATA.w3color}">${DATA.product_bank}</li>
 			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">상품 종류 : </b><div class="w3-col m6 w3-center">${DATA.product_type}</div></li>
 			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">대상 연령 : </b><div class="w3-col m6 w3-center"> ${DATA.join_target}</li>
 			    	<li class="w3-padding-16 pdh20 w3-padding">
 			      		<h2 class="w3-wide w3-padding" style="font-size: 15px;"><b>${DATA.product_name}</b></h2>
 			    	</li>
+			    	<li class="w3-padding-16 pdh20 w3-display-bottommiddle"><div class="w3-button w3-green w3-center prod_btn" id="p${DATA.product_no}">상세보기</div></li>
+			    	
 				</ul>
 					
     			
@@ -85,6 +112,8 @@
 			</div>
 </c:if>
 		</div>
+		
+	
  		
 		 			
 				<div class="w3-col w3-center" style="margin-top:50px;">
@@ -118,6 +147,25 @@
 		
 				
 			</div>
+			
+	<div class="w3-modal" id="modal" >
+			<div class="w3-modal-content mxw600 w3-card-4">
+			  	<ul class="w3-col w3-border w3-center w3-white w3-display-container" style="list-style-type: none; padding-left: 0px;">
+			        <h2 class="w3-col w3-green w3-display-topmiddle" style="margin-top: 0px;">Product Detail</h2>
+					<span onclick="document.getElementById('modal').style.display='none'" 
+			        		class="w3-button w3-green w3-display-topright">&times;</span>
+			    	<li class="w3-xlarge w3-padding-32"></li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">대상 연령 : </b><div class="w3-col m6 w3-center mddata" id="prod_no"></li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">상품 종류 : </b><div class="w3-col m6 w3-center mddata" id="prod_name"></div></li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">대상 연령 : </b><div class="w3-col m6 w3-center mddata" id="prod_bank"></li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">대상 연령 : </b><div class="w3-col m6 w3-center mddata" id="prod_target"></li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">대상 연령 : </b><div class="w3-col m6 w3-center mddata" id="prod_type"></li>
+			    	<li class="w3-padding-16 pdh20 w3-padding">
+			      		<p class="w3-wide w3-padding mddata" id="prod_file" style="font-size: 8pt;"></p>
+			    	</li>
+				</ul>
+			</div>
+		</div>
  	
 </body>
 </html>

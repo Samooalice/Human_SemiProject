@@ -13,11 +13,11 @@ public class PageUtil {
 	private int startRno, endRno; 
 	
 	public void setPage() {
-		setPage(nowPage, totalCount, 15, 5);
+		setPage(nowPage, totalCount, 6, 5);
 	}
 	
 	public void setPage(int nowPage, int totalCount) {
-		setPage(nowPage, totalCount, 15, 5);
+		setPage(nowPage, totalCount, 6, 5);
 	}
 	
 	public void setPage(int nowPage, int totalCount, int pageRow, int pageGroup) {

@@ -117,7 +117,7 @@
       <span class="w3-xlarge" >현대인의 든든한 자산관리 친구! 대체 뭐니?(That's Money!)</span>
       <p class="pt9">현대 사회에서 자산 관리는 더 이상 선택이 아닌 필수입니다. <br>
 		하지만 바쁜 일상 속에서 최신 금융 소식을 따라잡고, 이를 바탕으로 <br>
-		자산 관리를 체계적으로 하는 것은 결코 쉬운 일이 아닙니다. <br>
+		자산 관리를 체계적으로 하는 것은 결코 쉬운 일이 아닙니다. <br><br>
 		그래서 대체 뭐니?(That's Money!)는 여러분의 자산 관리를 돕기 위해 
 		키워드 기반 금융상품 소개 서비스를 제공합니다.
       </p>
@@ -127,28 +127,28 @@
 		 바쁜 현대인들도 손쉽게 자산을 관리할 수 있습니다.</div>
 		
 	  <span class="w3-xlarge w3-text-green">[주요기능]</span>
-		<div>* 맞춤형 금융상품 제공</div><br>
-		<div class="pt9">- 사용자가 설정한 키워드를 기반으로 최신 예/적금 상품을 큐레이션하여 제공<br><br>
-- 관심분야에 따른 투자 Tip등을 간단하게 확인</div>
+		<div>* 맞춤형 금융상품 제공</div>
+		<div class="pt9">- 사용자가 설정한 키워드를 기반으로 최신 예/적금 상품을 큐레이션하여 제공<br>
+- 관심분야에 따른 투자 Tip등을 간단하게 확인</div><br>
 		
-		<div>* 실시간 업데이트</div>
-		<div class="pt9">- 실시간으로 업데이트 되는 금융 소식을 통해 빠른 시장변동에 대응<br>
-- 중요 소식은 알림으로 즉시 전달받고, 중요정보를 놓치지 않도록 지원</div>
+		<div>* 실시간 업데이트</div><br>
+		<div class="pt9">- 실시간으로 업데이트 되는 금융 소식을 통해 빠른 시장변동에 대응<br><br>
+- 중요 소식은 알림으로 즉시 전달받고, 중요정보를 놓치지 않도록 지원</div><br>
 		
-		<div>* 사용 친화적 인터페이스</div>
-		<div>- 직관적이고 사용하기 쉬운 인터페이스로 누구나 쉽게 접근 가능</div>
+		<div>* 사용 친화적 인터페이스</div><br>
+		<div>- 직관적이고 사용하기 쉬운 인터페이스로 누구나 쉽게 접근 가능</div><br>
 		
-		<span class="w3-xlarge w3-text-green">[이용방법]</span>
-		<div>Step 1. 가입키워드 설정</div>
-		<div class="pt9">- 연령층, 관심상품, 주거래은행 등 사용자 직접 선택</div>
+		<span class="w3-xlarge w3-text-green">[이용방법]</span><br>
+		<div>Step 1. 가입키워드 설정</div><br>
+		<div class="pt9">- 연령층, 관심상품, 주거래은행 등 사용자 직접 선택</div><br>
 		
-		<div>Step 2. 예/적금 상품 수신</div>
-		<div class="pt9">- 전체 금융권 출시 예/적금 상품 검색 및 분석</div>
+		<div>Step 2. 예/적금 상품 수신</div><br>
+		<div class="pt9">- 전체 금융권 출시 예/적금 상품 검색 및 분석</div><br>
 		
-		<div>Step 3. 사용자 맞춤 예/적금 상품 추천</div>
-		<div class="pt9">- 시중에 접수중인 예/적금 상품 제공</div>
+		<div>Step 3. 사용자 맞춤 예/적금 상품 추천</div><br>
+		<div class="pt9">- 시중에 접수중인 예/적금 상품 제공</div><br>
 		
-		<span class="w3-xlarge w3-text-green">[대체뭐니?(That's Money!)의 이점]</span>
+		<span class="w3-xlarge w3-text-green">[대체뭐니?(That's Money!)의 이점]</span><br>
 		<div class="pt9">-바쁜 일상 속에서 최신 금융 정보를 쉽게 얻어 시간과 노력을 절약<br>
 						 -다양한 전문가의 분석과 조언을 통해 금융지식 확장<br>
 						 -맞춤형 정보를 바탕으로, 보다 효율적인 자산관리와 투자 가능</div>

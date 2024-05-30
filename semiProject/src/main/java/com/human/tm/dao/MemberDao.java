@@ -21,6 +21,11 @@ public class MemberDao {
 		public int listCount(MemberVO mVO) {
 			return session.selectOne("mSQL.selTotal", mVO);
 		}
+		
+	// 상세보기 회원정보 조회함수
+		public MemberVO getDetail(MemberVO mVO) {
+			return session.selectOne("mSQL.prodDetail", mVO);
+		}
 
 	// 회원가입된 회원의 닉네임 개수 가져오는 함수
 	public int nickCount(String nickname) {
@@ -36,4 +41,6 @@ public class MemberDao {
 	public int editMembInfo(MemberVO mVO) {
 		return session.update("mSQL.editMembInfo", mVO);
 	}
+	
+	
 }
