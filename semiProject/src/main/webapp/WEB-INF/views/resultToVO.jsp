@@ -56,10 +56,11 @@
 <body>
 	<form method="POST" id="frm">
 	</form>
-	<h1>test.jsp</h1>
+<!-- 	<h1>test.jsp</h1>
     <h1 id="age">Loading...</h1>
     <h1 id="sub">Loading...</h1>
     <h1 id="bank">Loading...</h1>
-    <div id="result"></div> <!-- 오류 메시지를 표시할 추가 요소 -->
-</body>
+    <div id="result"></div> 오류 메시지를 표시할 추가 요소
+ -->
+ </body>
 </html>

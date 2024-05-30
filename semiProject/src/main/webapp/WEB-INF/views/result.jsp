@@ -150,18 +150,17 @@
 			
 	<div class="w3-modal" id="modal" >
 			<div class="w3-modal-content mxw600 w3-card-4">
-			  	<ul class="w3-col w3-border w3-center w3-white w3-display-container" style="list-style-type: none; padding-left: 0px;">
+			  	<ul class="w3-col w3-border w3-white w3-display-container" style="list-style-type: none; padding-left: 0px;">
 			        <h2 class="w3-col w3-green w3-display-topmiddle" style="margin-top: 0px;">Product Detail</h2>
 					<span onclick="document.getElementById('modal').style.display='none'" 
 			        		class="w3-button w3-green w3-display-topright">&times;</span>
 			    	<li class="w3-xlarge w3-padding-32"></li>
-			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">대상 연령 : </b><div class="w3-col m6 w3-center mddata" id="prod_no"></li>
-			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">상품 종류 : </b><div class="w3-col m6 w3-center mddata" id="prod_name"></div></li>
-			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">대상 연령 : </b><div class="w3-col m6 w3-center mddata" id="prod_bank"></li>
-			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">대상 연령 : </b><div class="w3-col m6 w3-center mddata" id="prod_target"></li>
-			    	<li class="w3-padding-16 pdh20"><b class="w3-col m5 w3-light-align">대상 연령 : </b><div class="w3-col m6 w3-center mddata" id="prod_type"></li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col s3 m3 w3-right-align">상품 이름 : </b><div class="w3-col w3-center m8 s12 mddata" id="prod_name"></div></li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col s3 m3 w3-right-align">은행 : </b><div class="w3-col w3-center m8 s12 mddata" id="prod_bank"></li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col s3 m3 w3-right-align">대상 연령 : </b><div class="w3-col w3-center m8 s12 mddata" id="prod_target"></li>
+			    	<li class="w3-padding-16 pdh20"><b class="w3-col s3 m3 w3-right-align">상품 종류 : </b><div class="w3-col w3-center m8 s12  mddata" id="prod_type"></li>
 			    	<li class="w3-padding-16 pdh20 w3-padding">
-			      		<p class="w3-wide w3-padding mddata" id="prod_file" style="font-size: 8pt;"></p>
+			      		<p class="w3-col w3-wide w3-padding mddata" id="prod_file" style="font-size: 8pt;"></p>
 			    	</li>
 				</ul>
 			</div>
