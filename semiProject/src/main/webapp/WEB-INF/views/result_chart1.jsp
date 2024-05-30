@@ -113,7 +113,5 @@
     <iframe src="" scrolling="no" title="Iframe Example"></iframe>
 </div>
 
-<p>When the target attribute of a link matches the name of an iframe, the link will open in the iframe.</p>
-
 </body>
 </html>
